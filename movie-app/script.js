@@ -10,12 +10,12 @@ async function getMovies(){
     const respData =await resp.json(); // so that we can convert it into json 
 
     //taking the imgpath and mizing it with poster path from the API Url to take poster image
-    respData.results.forEach(movie => {
-        const img=document.createElement('img'); //creating img element
-        img.src=IMGPATH+movie.poster_path; // giving src the img path and the movie poster path for each
+    // respData.results.forEach(movie => {
+    //     const img=document.createElement('img'); //creating img element
+    //     img.src=IMGPATH+movie.poster_path; // giving src the img path and the movie poster path for each
 
-        document.body.appendChild(img);
-    });
+    //     document.body.appendChild(img);
+    // });
     return respData;
 
 }
