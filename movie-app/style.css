@@ -6,6 +6,8 @@ body {
   background-color: #22254b;
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 .movie {
   background-color: #373b69;
@@ -19,6 +21,7 @@ body {
 }
 .movie-info {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem 1rem;
   color: #eee;

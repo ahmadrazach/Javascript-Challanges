@@ -5,7 +5,12 @@ const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 
+
+
+
+
 async function getMovies(){
+    const main=document.getElementsByTagName('main');
     const resp =await fetch(APIURL); //so that we can fetch data, await to block further execution
     const respData =await resp.json(); // so that we can convert it into json 
 
@@ -26,8 +31,9 @@ async function getMovies(){
             <h3>${title}</h3>
             <span>${vote_average}</span>
         </div>
-        `
+        `;
         document.body.appendChild(movieEl);
+        //main.appendChild(movieEl);
     });
     return respData;
 
