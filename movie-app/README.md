@@ -1,11 +1,17 @@
 # Movie Searcher
 
 <a href="https://moviesearcherahmed.vercel.app/">Live Demo</a>
-Basic Features
+
+Basic Features:
 
 - list of movies
 - movie info
 - Search any movie
+
+Technologies used:
+• HTML
+• CSS
+• Javascript
 
 UI Resource :
 https://uidesigndaily.com/posts/photoshop-movie-app-mobile-day-193
