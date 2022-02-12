@@ -5,13 +5,14 @@
 <img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/movie-app/thumnail.jpg" alt="Demo image"/>
 Basic Features:
 
-- list of movies
-- movie info
-- Search any movie
+- Add the notes
+- complete the tasks
+- search completed,Uncompleted or all tasks seperately
 
 Technologies used:
 • HTML
 • CSS
 • Javascript
+• Local Database
 
 Help Resource : https://www.youtube.com/watch?v=Ttf3CEsEwMQ
