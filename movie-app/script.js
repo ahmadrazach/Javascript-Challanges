@@ -5,20 +5,31 @@ const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 
-const main=document.querySelector("main");
+const main=document.getElementById("main");
 
-const form =document.querySelector("form");
+const form =document.getElementById("form");
+const search =document.getElementById("search");
 
 
 //intially get fav movies
-getMovies();
-async function getMovies(){
+getMovies(APIURL);
+
+async function getMovies(url){
     
-    const resp =await fetch(APIURL); //so that we can fetch data, await to block further execution
+    const resp =await fetch(url); //so that we can fetch data, await to block further execution
     const respData =await resp.json(); // so that we can convert it into json 
 
+
+    showMovies(respData.results);
+
+}
+
+function showMovies(movies){
+
+    //clear main
+    main.innerHTML='';
     //taking the imgpath and mizing it with poster path from the API Url to take poster image
-    respData.results.forEach(movie => {
+    movies.forEach(movie => {
         // const img=document.createElement('img'); //creating img element
         // img.src=IMGPATH+movie.poster_path; // giving src the img path and the movie poster path for each
 
@@ -29,7 +40,7 @@ async function getMovies(){
         movieEl.classList.add('movie');
         movieEl.innerHTML=`
         <img 
-            src="${IMGPATH+movie.poster_path}" 
+            src="${IMGPATH+poster_path}" 
             alt="${title}"
         />
         <div class="movie-info">
@@ -42,8 +53,6 @@ async function getMovies(){
         //document.body.appendChild(movieEl);
         main.appendChild(movieEl);
     });
-    return respData;
-
 }
 
 function getClassByRate(vote) {
@@ -57,7 +66,17 @@ function getClassByRate(vote) {
         return 'red';
     }
 }
-console.log();
+
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const searchTerm=search.value;
+
+    if(searchTerm){
+        getMovies(SEARCHAPI+searchTerm)
+        search.value = "";
+    }
+});
 
 
 /*
