@@ -7,10 +7,10 @@ const SEARCHAPI =
 
 
 
-
+    const maine=document.getElementsByClassName('main');
 
 async function getMovies(){
-    const main=document.getElementsByTagName('main');
+    
     const resp =await fetch(APIURL); //so that we can fetch data, await to block further execution
     const respData =await resp.json(); // so that we can convert it into json 
 
@@ -29,16 +29,28 @@ async function getMovies(){
         />
         <div class="movie-info">
             <h3>${title}</h3>
-            <span>${vote_average}</span>
+            <span class="${getClassByRate(vote_average)}">${vote_average}</span>
         </div>
         `;
         document.body.appendChild(movieEl);
-        //main.appendChild(movieEl);
+        //console.log(maine)
+        ///maine.appendChild(movieEl);
     });
     return respData;
 
 }
 
+function getClassByRate(vote) {
+    if(vote>=8){
+        return 'green';
+    } else if (vote >=5){
+        return 'orange';
+
+    }
+    else{
+        return 'red';
+    }
+}
 console.log(getMovies());
 
 
