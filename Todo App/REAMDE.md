@@ -7,6 +7,7 @@ Basic Features:
 
 - Add the notes
 - complete the tasks
+- delete the tasks
 - search completed,Uncompleted or all tasks seperately
 
 Technologies used:
