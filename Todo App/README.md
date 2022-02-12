@@ -14,6 +14,6 @@ Technologies used:
 • HTML
 • CSS
 • Javascript
-• Local Database
+• Local Session
 
 Help Resource : https://www.youtube.com/watch?v=Ttf3CEsEwMQ
