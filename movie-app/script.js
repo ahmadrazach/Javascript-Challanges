@@ -7,7 +7,7 @@ const SEARCHAPI =
 
 
 
-    const maine=document.getElementsByClassName('main');
+    //const maine=document.getElementsByClassName('main');
 
 async function getMovies(){
     
@@ -20,6 +20,8 @@ async function getMovies(){
         // img.src=IMGPATH+movie.poster_path; // giving src the img path and the movie poster path for each
 
         const{ poster_path,title,vote_average}=movie;
+        // const main=document.createElement('div');
+        // main.classList.add('main');
         const movieEl=document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML=`
@@ -32,9 +34,9 @@ async function getMovies(){
             <span class="${getClassByRate(vote_average)}">${vote_average}</span>
         </div>
         `;
-        document.body.appendChild(movieEl);
+        //document.body.dispatchEvent()
         //console.log(maine)
-        ///maine.appendChild(movieEl);
+        document.body.appendChild(movieEl);
     });
     return respData;
 

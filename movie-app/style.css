@@ -9,6 +9,32 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+header {
+  position: absolute;
+  background-color: #373b69;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 1rem;
+}
+.search {
+  background-color: transparent;
+  border: 2px solid #22254b;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-family: inherit;
+
+  font-size: 1rem;
+}
+.search::placeholder {
+  color: #7378c5;
+}
+
+.search:focus {
+  background-color: #22254b;
+  outline: none;
+}
 .movie {
   background-color: #373b69;
   margin: 2rem;
