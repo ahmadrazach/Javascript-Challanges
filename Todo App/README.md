@@ -11,9 +11,10 @@ Basic Features:
 - search completed,Uncompleted or all tasks seperately
 
 Technologies used:
-• HTML
-• CSS
-• Javascript
-• Local Session
+
+- HTML
+- CSS
+- Javascript
+- Local Session Storage
 
 Help Resource : https://www.youtube.com/watch?v=Ttf3CEsEwMQ
