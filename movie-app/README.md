@@ -1,5 +1,6 @@
-# Movie App for practice
+# Movie Searcher
 
+<a href="https://moviesearcherahmed.vercel.app/">Live Demo</a>
 Basic Features
 
 - list of movies
