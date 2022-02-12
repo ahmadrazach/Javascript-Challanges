@@ -11,7 +11,7 @@ body {
 header {
   background-color: #373b69;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 1rem;
 }
 .search {
@@ -21,11 +21,11 @@ header {
   padding: 0.5rem 1rem;
   color: #fff;
   font-family: inherit;
-
   font-size: 1rem;
 }
 .search::placeholder {
-  color: #7378c5;
+  color: #8286c5;
+  text-align: center;
 }
 
 .search:focus {
@@ -55,7 +55,6 @@ main {
   padding: 0.5rem 1rem 1rem;
   color: #eee;
   letter-spacing: 1px;
-  font-weight: bold;
 }
 .movie-info h3 {
   margin: 0;
@@ -63,6 +62,7 @@ main {
 .movie-info span {
   background-color: #22254b;
   border-radius: 3px;
+  font-weight: bold;
   padding: 0.25rem 0.5rem;
 }
 .movie-info span.green {
@@ -73,4 +73,22 @@ main {
 }
 .movie-info span.red {
   color: red;
+}
+.overview {
+  background-color: #fff;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in;
+  overflow: auto;
+  max-height: 100%;
+}
+.overview h4 {
+  margin-top: 0;
+}
+.movie:hover .overview {
+  transform: translateY(0);
 }

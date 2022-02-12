@@ -33,7 +33,7 @@ function showMovies(movies){
         // const img=document.createElement('img'); //creating img element
         // img.src=IMGPATH+movie.poster_path; // giving src the img path and the movie poster path for each
 
-        const{ poster_path,title,vote_average}=movie;
+        const{ poster_path,title,vote_average,overview}=movie;
         // const main=document.createElement('div');
         // main.classList.add('main');
         const movieEl=document.createElement('div');
@@ -47,10 +47,15 @@ function showMovies(movies){
             <h3>${title}</h3>
             <span class="${getClassByRate(vote_average)}">${vote_average}</span>
         </div>
+        <div class="overview">
+            <h4>Overview</h4>
+            ${overview}
+        </div>
         `;
         //document.body.dispatchEvent()
         //console.log(maine)
         //document.body.appendChild(movieEl);
+        console.log(overview)
         main.appendChild(movieEl);
     });
 }
