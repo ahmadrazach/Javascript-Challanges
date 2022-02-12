@@ -2,7 +2,7 @@
 
 <a href="https://moviesearcherahmed.vercel.app/">Live Demo</a>
 
-<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/movie-app/thumnail.jpg" alt="Demo image"/>
+<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/Todo%20App/thumbnail.jpg" alt="Demo image"/>
 Basic Features:
 
 - Add the notes
