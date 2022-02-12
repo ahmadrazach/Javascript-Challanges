@@ -5,10 +5,13 @@ const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 
+const main=document.querySelector("main");
+
+const form =document.querySelector("form");
 
 
-    //const maine=document.getElementsByClassName('main');
-
+//intially get fav movies
+getMovies();
 async function getMovies(){
     
     const resp =await fetch(APIURL); //so that we can fetch data, await to block further execution
@@ -36,7 +39,8 @@ async function getMovies(){
         `;
         //document.body.dispatchEvent()
         //console.log(maine)
-        document.body.appendChild(movieEl);
+        //document.body.appendChild(movieEl);
+        main.appendChild(movieEl);
     });
     return respData;
 
@@ -53,14 +57,13 @@ function getClassByRate(vote) {
         return 'red';
     }
 }
-console.log(getMovies());
+console.log();
 
 
 /*
-            <img src="https://image.tmdb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt="">
-            <div class="movie-info">
-                <h3>Movie title</h3>
-                <span>8.4</span>
-            </div>
-        </div>
+    <img src="https://image.tmdb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt="">
+    <div class="movie-info">
+        <h3>Movie title</h3>
+        <span>8.4</span>
+    </div>
 */
