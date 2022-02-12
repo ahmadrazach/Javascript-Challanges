@@ -4,8 +4,7 @@ Basic Features
 
 - list of movies
 - movie info
-- fav movie
-- actors
+- Search any movie
 
 UI Resource :
 https://uidesigndaily.com/posts/photoshop-movie-app-mobile-day-193
@@ -17,6 +16,3 @@ https://uidesigndaily.com/posts/photoshop-movie-app-mobile-day-193
 - IMGPATH = "https://image.tmdb.org/t/p/w1280";
 - SEARCHAPI =
   "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
-
-#start from here :
-https://youtu.be/dtKciwk_si4?t=18678
