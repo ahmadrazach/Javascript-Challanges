@@ -1,14 +1,12 @@
-# Notes App using Javascript
+# Notes App
 
 <a href="https://todolistahmed.vercel.app/">Live Demo</a>
 
 <img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/Todo%20App/thumbnail.jpg" alt="Demo image"/>
+
 Basic Features:
 
-- Add the notes
-- complete the tasks
-- delete the tasks
-- search completed,Uncompleted or all tasks seperately
+- CRUD (Add,Update and delete) operations with Notes the notes
 
 Technologies used:
 

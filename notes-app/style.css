@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #7bdaf3;
+  background-color: #ade8f4;
   display: flex;
   flex-wrap: wrap;
   font-family: 'Poppins', sans-serif;
@@ -14,8 +14,8 @@ body {
 }
 
 .add {
-  background-color: #9ec862;
-  border-radius: 3px;
+  background-color: #023e8a;
+  border-radius: 20px;
   border: none;
   color: white;
   cursor: pointer;
@@ -31,10 +31,11 @@ body {
   margin: 20px;
   height: 400px;
   width: 400px;
+  border-radius: 20px;
 }
 
 .note .tools {
-  background-color: #9ec862;
+  background-color: #023e8a;
   display: flex;
   justify-content: flex-end;
   padding: 0.5rem;
