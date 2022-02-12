@@ -1,7 +1,7 @@
 # Movie Searcher
 
 <a href="https://moviesearcherahmed.vercel.app/">Live Demo</a>
-
+<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/movie-app/thumnail.jpg" alt="Demo image"/>
 Basic Features:
 
 - list of movies
