@@ -15,6 +15,7 @@ body {
   border-radius: 3px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   width: 300px;
+  overflow: hidden;
 }
 .movie img {
   width: 100%;
@@ -26,6 +27,7 @@ body {
   padding: 0.5rem 1rem 1rem;
   color: #eee;
   letter-spacing: 1px;
+  font-weight: bold;
 }
 .movie-info h3 {
   margin: 0;
@@ -34,4 +36,13 @@ body {
   background-color: #22254b;
   border-radius: 3px;
   padding: 0.25rem 0.5rem;
+}
+.movie-info span.green {
+  color: greenyellow;
+}
+.movie-info span.orange {
+  color: orange;
+}
+.movie-info span.red {
+  color: red;
 }
