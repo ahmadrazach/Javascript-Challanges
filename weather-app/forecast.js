@@ -11,7 +11,10 @@ const getCity= async (city )=>{
     const query=`?apikey=${key}&q=${city}`;
     const response=await fetch(baseURL+query);
     const data=response.json();
-    console.log(data);
+    
+    return data;
 }
 
-getCity("Lahore");
+getCity("Lahore")
+.then(data=>console.log(data[0]))
+.catch(err=>console.log(err));
