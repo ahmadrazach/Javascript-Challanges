@@ -16,3 +16,4 @@ Technologies used:
 - CSS
 - Javascript
 - Bootstrap
+- Accuweather Api
