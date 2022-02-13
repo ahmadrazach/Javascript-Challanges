@@ -10,27 +10,38 @@ const updateCity=async(city)=>{
         weather:weather,
     };
 };
+
 cityForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     const city=cityForm.city.value.trim();
     cityForm.reset();
 
-    updateCity(city).then(data=>updateUI(data)).catch(err=>console.log(err));
+    updateCity(city).then(data=>updateUI(data)).catch(err=>alert("Please enter the correct city & without spaces"));
 });
 
 
 //update the details to the front end
 const card=document.querySelector(".card");
-const details=document.querySelector(".details");
 
+const details=document.querySelector(".details");
+const time=document.querySelector(".time");
 const updateUI=(data)=>{
     const{cityDetails,weather}=data;
     console.log(cityDetails)
-    details.innerHTML=`<h5 class="my-5">${cityDetails.LocalizedName}</h5>
+    details.innerHTML=`
+    <h5 class="my-5">${cityDetails.LocalizedName}</h5>
     <div class="my-3">${weather.WeatherText}</div>
     <div class="display-4 my-4">
         <span>${weather.Temperature.Metric.Value}</span>
         <span>&deg;C</span>
-    </div>`
+    </div>`;
+    if(weather.isDayTime){
+        time.setAttribute("src","./imgs/sun.png");
+    }
+    else{
+        time.setAttribute("src","./imgs/moon.png");
+        
+    }
 }
+
 
