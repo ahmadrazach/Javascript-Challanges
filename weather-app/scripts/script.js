@@ -13,6 +13,7 @@ const updateCity=async(city)=>{
 
 cityForm.addEventListener('submit',(e)=>{
     e.preventDefault();
+
     const city=cityForm.city.value.trim();
     cityForm.reset();
 
@@ -22,7 +23,9 @@ cityForm.addEventListener('submit',(e)=>{
 
 //update the details to the front end
 const card=document.querySelector(".card");
-
+// if(cityForm.city.value==false ){
+//  card.innerHTML="";   
+// }
 const details=document.querySelector(".details");
 const time=document.querySelector(".time");
 const updateUI=(data)=>{
@@ -41,6 +44,9 @@ const updateUI=(data)=>{
     else{
         time.setAttribute("src","./imgs/moon.png");
         
+    }
+    if(card.classList.contains('d-none')){
+        card.classList.remove("d-none");
     }
 }
 
