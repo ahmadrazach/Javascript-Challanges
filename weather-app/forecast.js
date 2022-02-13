@@ -15,13 +15,13 @@ const getCity= async (city )=>{
     return data;
 }
 
-getCity("Lahore")
-.then(data=>{
-    return getWeather(data[0].Key);
-}).then(data=>{
-    console.log(data)
-})
-.catch(err=>console.log(err));
+// getCity("Lahore")
+// .then(data=>{
+//     return getWeather(data[0].Key);
+// }).then(data=>{
+//     console.log(data)
+// })
+// .catch(err=>console.log(err));
 
 //now will be using getCity to getweather
 const getWeather=async(id)=>{
