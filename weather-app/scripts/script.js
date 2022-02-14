@@ -16,10 +16,12 @@ cityForm.addEventListener('submit',(e)=>{
 
     const city=cityForm.city.value.trim();
     cityForm.reset();
-
+    
     updateCity(city).then(data=>updateUI(data)).catch(err=>alert("Please enter the correct city & without spaces"));
 });
 
+//city => add to the local storage
+localStorage.setItem("city",city);
 
 //update the details to the front end
 const card=document.querySelector(".card");
@@ -49,4 +51,10 @@ const updateUI=(data)=>{
     }
 }
 
+
+if (localStorage.getItem("city")){
+    updateCity(localStorage.getItem("city"))
+    .then(data=>updateUI(data))
+    .catch(err=>console.log(err))
+}
 
