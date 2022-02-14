@@ -5,10 +5,10 @@
 <img src="" alt="Demo image"/>
 Basic Features:
  
-- 
-- 
-- 
--
+- city weather search
+- weather condition
+- temperature in degree centigrades
+- icon related to day or night at that city
 
 Technologies used:
 

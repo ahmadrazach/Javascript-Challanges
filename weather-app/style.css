@@ -1,5 +1,23 @@
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
   background-color: #eeedec;
+  letter-spacing: 0.2em;
+  font-size: 0.8em;
+}
+.container {
+  max-width: 400px;
+  margin: 10%;
+}
+.change-location {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.card {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+img {
+  padding-top: 20%;
+  background-color: white;
 }

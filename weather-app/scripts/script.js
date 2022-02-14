@@ -43,7 +43,6 @@ const updateUI=(data)=>{
     }
     else{
         time.setAttribute("src","./imgs/moon.png");
-        
     }
     if(card.classList.contains('d-none')){
         card.classList.remove("d-none");
