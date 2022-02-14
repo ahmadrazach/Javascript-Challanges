@@ -1,8 +1,8 @@
 # Weather Application
 
-<a href="">Live Demo</a>
+<a href="https://weather-app-ahmadrazach.vercel.app/">Live Demo</a>
 
-<img src="" alt="Demo image"/>
+<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/weather-app/thumbnail.jpg" alt="Demo image"/>
 Basic Features:
  
 - city weather search
