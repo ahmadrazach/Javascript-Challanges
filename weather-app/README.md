@@ -17,3 +17,4 @@ Technologies used:
 - Javascript
 - Bootstrap
 - Accuweather Api
+- Local Storage Session
