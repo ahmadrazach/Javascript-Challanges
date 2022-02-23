@@ -29,17 +29,19 @@ const db=getFirestore(app);
 
 //making it to the list
 const list=document.querySelector("ul");
+//taking value from the form
+const form=document.querySelector("form");
 
-// adding the recipes from firebase to the page 
+// populating the recipes from firebase to the page 
 const  addRecipie=(recipe)=>{
   let html=`
-  <li>${recipe.foodTitle}</li>
-  <li>${recipe.time.toDate()}</li>
+  <li>${recipe.foodTitle} - ${recipe.time.toDate()}</li>
   `;
   list.innerHTML+=html;
   console.log(html)
 }
 
+//Getting the data from the firebase
 async function getRecipes(db){
   const recepiesCol=collection(db,"receipies");
   const recipeSnapShot=await getDocs(recepiesCol);
@@ -50,6 +52,18 @@ async function getRecipes(db){
    );
   return recipeList;
 }
+
+//Taking value from the form and saving it into the firebase
+form.addEventListener("submit",async(e)=>
+{
+e.preventDefault();
+const now=new Date();
+const recipe={
+  foodTitle:form.recipie.value,
+  time:Timestamp.fromDate(now)
+}
+const decRef=await addDoc(collection(db,"receipies"),recipe)
+})
 
 
 
