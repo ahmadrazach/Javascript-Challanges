@@ -26,13 +26,33 @@ const app = initializeApp(firebaseConfig);
 //Firebase intialize
 const db=getFirestore(app);
 
+
+//making it to the list
+const list=document.querySelector("ul");
+
+// adding the recipes from firebase to the page 
+const  addRecipie=(recipe)=>{
+  let html=`
+  <li>${recipe.foodTitle}</li>
+  <li>${recipe.time.toDate()}</li>
+  `;
+  list.innerHTML+=html;
+  console.log(html)
+}
+
 async function getRecipes(db){
   const recepiesCol=collection(db,"receipies");
   const recipeSnapShot=await getDocs(recepiesCol);
-  const recipeList=recipeSnapShot.docs.map((recipe)=>
-  recipe.data());
+  const recipeList=recipeSnapShot.docs.map((recipe)=>{
+    console.log("Get Recipie -> Recipie.data()",recipe.data());
+    addRecipie(recipe.data())
+  }
+   );
   return recipeList;
 }
+
+
+
 
 const recipes=await getRecipes(db);
 console.log(recipes);
