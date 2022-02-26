@@ -35,7 +35,7 @@ const form=document.querySelector("form");
 // populating the recipes from firebase to the page 
 const  addRecipie=(recipe)=>{
   let html=`
-  <li>${recipe.foodTitle} - ${recipe.time.toDate()}</li>
+  <li>🥗 ${recipe.foodTitle} - ${recipe.time.toDate()}</li>
   `;
   list.innerHTML+=html;
   console.log(html)
