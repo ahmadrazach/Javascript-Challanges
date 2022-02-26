@@ -2,7 +2,7 @@
 
 <a href="">Live Demo</a>
 
-<img src="" alt="Demo image"/>
+<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/recipe-app/template.jpg" alt="Demo image"/>
 Basic Features:
  
 - Adding items into the firebase
