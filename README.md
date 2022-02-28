@@ -12,3 +12,13 @@
   | Recipie | <a href="https://recipeappahmed.vercel.app/">Live Demo</a> | <img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/recipe-app/template.jpg" alt="Demo image"/> |
   | Todo List | <a href="https://todolistahmed.vercel.app/">Live Demo</a> | <img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/Todo%20App/thumbnail.jpg" alt="Demo image"/> |
   | Weather Check | <a href="https://weather-app-ahmadrazach.vercel.app/">Live Demo</a> | <img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/weather-app/thumbnail.jpg" alt="Demo image"/> |
+
+Here is a simple flow chart:
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
