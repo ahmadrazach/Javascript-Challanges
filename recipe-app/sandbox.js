@@ -1,13 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
-  import {
-  getFirestore,
-  collection,
-  getDocs,
-  Timestamp,
-  doc,
-  setDoc,
-  addDoc,
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
+import {
+getFirestore,
+collection,
+getDocs,
+Timestamp,
+doc,
+setDoc,
+addDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
 
 const firebaseConfig = {
