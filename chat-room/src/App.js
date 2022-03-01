@@ -4,6 +4,8 @@ import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider ,getAuth,signInWithPopup} from "firebase/auth";
 //import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import Button from "./components/Button"
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,7 +24,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
-//Implementing onClick event 
+
+
+
+function App() {
+
+  //Implementing onClick event 
 const signInWithGoogle=async()=>{
   //retrieve Google provider object
   const provider= new GoogleAuthProvider();
@@ -38,8 +45,6 @@ const signInWithGoogle=async()=>{
   }
 };
 
-
-function App() {
   return (
     <Button onClick={signInWithGoogle}>sign In With Google</Button>
   );
