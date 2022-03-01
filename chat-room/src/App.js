@@ -2,7 +2,8 @@ import './App.css';
 //Initializing Firebase in your app and create a Firebase App object:
 import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider ,getAuth,signInWithPopup} from "firebase/auth";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+//import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import Button from "./components/Button"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 
 
 //Implementing onClick event 
-const signInwithGoogle=async()=>{
+const signInWithGoogle=async()=>{
   //retrieve Google provider object
   const provider= new GoogleAuthProvider();
   //set Language to the default browser prefrence
@@ -35,14 +36,12 @@ const signInwithGoogle=async()=>{
   }catch(error){
     console.log(error.message);
   }
-}
+};
 
 
 function App() {
   return (
-    <div className="App">
-      hi
-    </div>
+    <Button onClick={signInWithGoogle}>sign In With Google</Button>
   );
 }
 
