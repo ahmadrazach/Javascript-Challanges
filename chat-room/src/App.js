@@ -1,7 +1,7 @@
 import './App.css';
 //Initializing Firebase in your app and create a Firebase App object:
 import { initializeApp } from 'firebase/app';
-
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,6 +18,23 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
+
+//Implementing onClick event 
+const signInwithGoogle=async()=>{
+  //retrieve Google provider object
+  const provider= new firebase.auth.GoogleAuthProvider();
+  //set Language to the default browser prefrence
+  firebase.auth().useDeviceLanguage();
+  //Starting sign In process
+  try{
+    await firebase.auth().signInwithPopup(provider);
+
+  }catch(error){
+    console.log(error.message);
+  }
+}
+
 
 function App() {
   return (
