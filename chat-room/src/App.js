@@ -4,7 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider ,getAuth,signInWithPopup} from "firebase/auth";
 //import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import Button from "./components/Button"
-
+i//mport {useAuthState,useDarkMode} from './'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,6 +28,7 @@ const app = initializeApp(firebaseConfig);
 
 
 function App() {
+ const {user,initializing}=use
 
   //Implementing onClick event 
 const signInWithGoogle=async()=>{
@@ -44,6 +45,7 @@ const signInWithGoogle=async()=>{
     console.log(error.message);
   }
 };
+
 
   return (
     <Button onClick={signInWithGoogle}>sign In With Google</Button>
