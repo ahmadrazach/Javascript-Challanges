@@ -14,6 +14,7 @@ Technologies used:
 - CSS
 - Javascript
 - React
-- Firebase & Firestore
+- Firebase & Firestore (auth.currentUser,onAuthChanged)
 
 - Node packages : firebase
+- hooks (useEffect,useState)
