@@ -8,7 +8,7 @@ const Channel=({user=null})=>{
     const db=getFirestore();
     const messagesRef=collection(db,"messages");
     const messages = useFirestoreQuery(
-        messagesRef.orderBy('createdAt','desc').limit(100)
+        query(messagesRef,orderBy('createdAt','desc'),limit(100))
     );
     const [newMessage,setNewMessage]=useState("");
     
