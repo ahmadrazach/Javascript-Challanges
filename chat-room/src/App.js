@@ -40,15 +40,15 @@ const signInWithGoogle=async()=>{
   
   auth.languageCode='it';
 
-  console.log("aya")
+  //console.log("aya")
   //Starting sign In process
   try{
     await signInWithPopup(auth,provider);
-    console.log("aya try")
+    //console.log("aya try")
 
   }catch(error){
-    console.log("aya eror ")
-    console.log(error.code);
+    //console.log("aya eror ")
+    //console.log(error.code);
     console.log(error.message);
   }
 };

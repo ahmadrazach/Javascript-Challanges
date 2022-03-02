@@ -2,7 +2,8 @@ import  {useState, useEffect ,useRef} from "react";
 //firebase and firestore functions
 import { getFirestore,collection,query,orderBy,limit,onSnapshot,doc,getDocs,setDocs,Timestamp  } from "firebase/firestore";
 import { useFirestoreQuery } from "../hooks";
-import Message from './Message'
+import Message from './Message';
+import PropTypes from "prop-types"
 const Channel=({user=null})=>{
     const db=getFirestore();
     const messagesRef=collection(db,"messages");
@@ -54,26 +55,43 @@ const Channel=({user=null})=>{
                 </p>
             </div>
             <ul>
-                {messages.map(message=>{
-                <li key={message.id}>
-                    <Message {...message}/></li>
-                })}
+                {messages
+                ?.sort((first, second) =>
+                    first?.createdAt?.seconds <= second?.createdAt?.seconds ? -1 : 1
+                )
+                ?.map(message => (
+                    <li key={message.id}>
+                    <Message {...message} />
+                    </li>
+                ))}
             </ul>
-            <form onSubmit={handleOnSubmit}>
-                <input
-                    ref={inputRef}
-                    type="text"
-                    value={NewMessage}
-                    onChange={handleOnChange}
-                    placeholder="Type your message here ..."
-                />
-                <button 
-                type="submit"
-                disabled={!NewMessage}
-                >Send</button>
+            <div ref={bottomListRef} />
+            <div>
+                <form 
+                onSubmit={handleOnSubmit}>
+                    <input
+                        ref={inputRef}
+                        type="text"
+                        value={newMessage}
+                        onChange={handleOnChange}
+                        placeholder="Type your message here ..."
+                    />
+                    <button 
+                    type="submit"
+                    disabled={!newMessage}
+                    >Send</button>
 
-            </form>
+                </form>
+            </div>
         </>
     );
 };
+
+Channel.propTypes = {
+    user: PropTypes.shape({
+      uid: PropTypes.string,
+      displayName: PropTypes.string,
+      photoURL: PropTypes.string,
+    }),
+  };
 export default Channel;
