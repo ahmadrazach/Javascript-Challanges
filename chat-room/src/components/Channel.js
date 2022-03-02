@@ -32,6 +32,7 @@ const Channel=({user=null})=>{
         const trimmedMessage=newMessage.trim();
         if(trimmedMessage){
             //Add new message in the firestore
+            const now=new Date();
             messagesRef.add({
                 text:trimmedMessage,
                 createdAt:Timestamp.fromDate(now),
