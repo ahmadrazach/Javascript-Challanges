@@ -1,6 +1,6 @@
 import {useEffect,useState,useRef} from "react";
 import { onAuthStateChanged } from "firebase/auth";
-
+import {isEqual} from "firebase/database"
 //useFirestoreQuery function
 export function useFirestoreQuery(query){
     const[docs,setDocs]=useState([]);
@@ -10,6 +10,7 @@ export function useFirestoreQuery(query){
     useEffect(()=>{
         //use Firestore built-in 'is_Equal method
         //to compare queries
+        console.log(query);
         if(!queryRef?.current?.isEqual(query)){
             queryRef.current=query;
         }
