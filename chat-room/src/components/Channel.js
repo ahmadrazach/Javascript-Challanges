@@ -1,7 +1,7 @@
 import useState, { useEffect } from "react";
 //firebase and firestore functions
 import { getFirestore,collection,query,orderBy,limit,onSnapshot,doc,getDocs,setDocs,Timestamp  } from "firebase/firestore";
-
+import Message from './Message'
 const Channel=({user=null})=>{
     const db=getFirestore();
     const query=collection(db,"messages").orderBy('createdAt').limit(100);
@@ -49,12 +49,13 @@ const Channel=({user=null})=>{
         <>
             <ul>
                 {messages.map(message=>{
-                <li ley={message.id}>{message.text}</li>
+                <li key={message.id}>
+                    <Message {...message}/></li>
                 })}
             </ul>
             <form onSubmit={handleOnSubmit}>
                 <input
-                    ref={inpputRef}
+                    ref={inputRef}
                     type="text"
                     value={NewMessage}
                     onChange={handleOnChange}
