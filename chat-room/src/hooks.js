@@ -14,6 +14,25 @@ export function useFirestoreQuery(query){
             queryRef.current=query;
         }
     });
+    //Re-run data listenet only if query has changed
+    useEffect(()=>{
+        if(!queryRef.current){
+            return null;
+        }
+        //Subscribe to query with onSnapShot
+        const unsubscribe=queryRef.current.onSnapshot(querySnapshot=>{
+            //Get all the documents from collection - with IDs
+            const data=querySnapshot.docs.map(doc=>({
+                ...doc.data(),
+                id:doc.id,
+            }));
+            //Update state
+            setDocs(data);
+        });
+        //Detach listener
+        return unsubscribe;
+    },[queryRef]);
+    return docs;
 }
 //useAuthState function
 export function useAuthState(auth) {
