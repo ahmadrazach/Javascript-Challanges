@@ -23,12 +23,33 @@ const Channel=({user=null})=>{
         return unsubscribe;
 
     },[]);
+
+    //for handeling change
+    const handleOnChange=e=>{
+        setNewMessage(e.target.value);
+    }
     return (
-        <ul>
-            {messages.map(message=>{
-            <li ley={message.id}>{message.text}</li>
-            })}
-        </ul>
+        <>
+            <ul>
+                {messages.map(message=>{
+                <li ley={message.id}>{message.text}</li>
+                })}
+            </ul>
+            <form onSubmit={handleOnSubmit}>
+                <input
+                    ref={inpputRef}
+                    type="text"
+                    value={NewMessage}
+                    onChange={handleOnChange}
+                    placeholder="Type your message here ..."
+                />
+                <button 
+                type="submit"
+                disabled={!NewMessage}
+                >Send</button>
+
+            </form>
+        </>
     );
 };
 export default Channel;
