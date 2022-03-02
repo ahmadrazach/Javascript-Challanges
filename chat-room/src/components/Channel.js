@@ -4,7 +4,8 @@ import { getFirestore,collection,query,orderBy,limit,onSnapshot,doc,getDocs,setD
 import Message from './Message'
 const Channel=({user=null})=>{
     const db=getFirestore();
-    const query=collection(db,"messages").orderBy('createdAt').limit(100);
+    const messagesRef=collection(db,"messages");
+    
     const [messages,setMessages]=useState([]);
     
     useEffect(()=>{

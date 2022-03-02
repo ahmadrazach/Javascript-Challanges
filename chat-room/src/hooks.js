@@ -1,27 +1,41 @@
-import {useEffect,useState} from "react";
+import {useEffect,useState,useRef} from "react";
 import { onAuthStateChanged } from "firebase/auth";
 
+//useFirestoreQuery function
+export function useFirestoreQuery(query){
+    const[docs,setDocs]=useState([]);
+    //store current query in ref
+    const queryRef=useRef(query);
+    //compare current query with the previous one
+    useEffect(()=>{
+        //use Firestore built-in 'is_Equal method
+        //to compare queries
+        if(!queryRef?.current?.isEqual(query)){
+            queryRef.current=query;
+        }
+    });
+}
+//useAuthState function
+export function useAuthState(auth) {
+const [initializing, setInitializing] = useState(true);
+const [user, setUser] = useState(() => auth.currentUser);
 
-  export function useAuthState(auth) {
-    const [initializing, setInitializing] = useState(true);
-    const [user, setUser] = useState(() => auth.currentUser);
-  
-    useEffect(() => {
-      
-      const unsubscribe = onAuthStateChanged(auth, (user) => {
-        if (user) {
-          setUser(user);
-        } else {
-          setUser(false);
-        }
-        if (initializing) {
-          setInitializing(false);
-        }
-      });
-  
-      // Cleanup subscription
-      return unsubscribe;
-    }, [auth, initializing]);
-  
-    return { user, initializing };
-  }
+useEffect(() => {
+    
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+        setUser(user);
+    } else {
+        setUser(false);
+    }
+    if (initializing) {
+        setInitializing(false);
+    }
+    });
+
+    // Cleanup subscription
+    return unsubscribe;
+}, [auth, initializing]);
+
+return { user, initializing };
+}
