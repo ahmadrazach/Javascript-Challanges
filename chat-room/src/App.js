@@ -1,9 +1,9 @@
 import './App.css';
 //Initializing Firebase in your app and create a Firebase App object:
 import { initializeApp } from 'firebase/app';
-import { GoogleAuthProvider ,getAuth,signInWithPopup,onAuthStateChanged} from "firebase/auth";
+import { GoogleAuthProvider ,getAuth,signInWithPopup,onAuthStateChanged,signOut} from "firebase/auth";
 //import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-//import Button from "./components/Button"
+import Button from "./components/Button"
 //import hooks
 import {useAuthState} from './hooks'
 
@@ -29,18 +29,15 @@ const auth=getAuth();
 
 
 function App() {
-//const {user,initializing}=useAuthState(auth);
-  //Implementing onClick event 
+const {user,initializing}=useAuthState(auth);
+//Implementing onClick event 
 //retrieve Google provider object (https://firebase.google.com/docs/auth/web/google-signin)
 const signInWithGoogle=async()=>{
-     //
-//const {user,initializing}=useAuthState(getAuth());
-  
+
   const provider= new GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   //set Language to the default browser prefrence
   
-
   auth.languageCode='it';
 
   console.log("aya")
@@ -55,11 +52,32 @@ const signInWithGoogle=async()=>{
     console.log(error.message);
   }
 };
-
+//signing out function
+const signOutFunc = async () => {
+ // sign
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.log(error.code)
+    console.log(error.message);
+  }
+};
 
   return (
-    <button onClick={signInWithGoogle}>sign In With Google</button>
+    <div>
+    {
+      user ? (
+        <>
+          <Button onClick={signOutFunc}>Sign out</Button>
+          <p>Welcome to the chat!</p>
+        </>
+      ) : <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+    }
+  </div>
   );
 }
 
 export default App;
+
+
+//hooks.js
