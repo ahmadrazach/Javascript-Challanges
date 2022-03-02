@@ -1,6 +1,7 @@
 import {useEffect,useState,useRef} from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import {isEqual} from "firebase/database"
+import {doc,onSnapshot} from "firebase/firestore"
 //useFirestoreQuery function
 export function useFirestoreQuery(query){
     const[docs,setDocs]=useState([]);
@@ -21,7 +22,7 @@ export function useFirestoreQuery(query){
             return null;
         }
         //Subscribe to query with onSnapShot
-        const unsubscribe=queryRef.current.onSnapshot(querySnapshot=>{
+        const unsubscribe=onSnapshot(queryRef,querySnapshot=>{
             //Get all the documents from collection - with IDs
             const data=querySnapshot.docs.map(doc=>({
                 ...doc.data(),

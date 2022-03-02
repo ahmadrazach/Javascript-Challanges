@@ -1,6 +1,6 @@
 import  {useState, useEffect ,useRef} from "react";
 //firebase and firestore functions
-import { getFirestore,collection,query,orderBy,limit,onSnapshot,doc,getDocs,setDocs,Timestamp  } from "firebase/firestore";
+import { getFirestore,collection,query,orderBy,limit,Timestamp  } from "firebase/firestore";
 import { useFirestoreQuery } from "../hooks";
 import Message from './Message';
 import PropTypes from "prop-types"
