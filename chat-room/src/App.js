@@ -91,15 +91,20 @@ const signOutFunc = async () => {
     <div>
       <header>
         <a href="https://ahmadrazach.github.io"> Logo</a>
+        <div>
+            {
+              user ? (
+               <button 
+                  onClick={signOut}
+                >Sign Out</button>
+              ) : null
+            }
+        </div>
       </header>
-    {
-      user ? (
-        <>
-          <Button onClick={signOutFunc}>Sign out</Button>
-          <p>Welcome to the chat!</p>
-        </>
-      ) : <Button onClick={signInWithGoogle}>Sign in with Google</Button>
-    }
+      <main>
+        {renderContent()}
+      </main>
+    
   </div>
   );
 }
