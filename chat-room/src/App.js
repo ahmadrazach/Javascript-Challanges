@@ -6,7 +6,7 @@ import { GoogleAuthProvider ,getAuth,signInWithPopup,onAuthStateChanged,signOut}
 import Button from "./components/Button"
 //import hooks
 import {useAuthState} from './hooks'
-
+import Channel from "./components/Channel"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -63,8 +63,35 @@ const signOutFunc = async () => {
   }
 };
 
+  const renderContent=()=>{
+    if(initializing){
+      return (
+        <div>
+          <h1>Loading</h1>
+        </div>
+      )
+    }
+
+    if (user) return <Channel user={user}/>;
+    
+    return (
+      <div>
+        <div>
+          <h2>ChatRoom</h2>
+          <p>Chat with people all around you </p>
+          <button
+            onClick={signInWithGoogle}
+          >Sign in with Google</button>  
+        </div>
+      </div>
+    );
+  }
+  
   return (
     <div>
+      <header>
+        <a href="https://ahmadrazach.github.io"> Logo</a>
+      </header>
     {
       user ? (
         <>
