@@ -1,10 +1,11 @@
 import './App.css';
 //Initializing Firebase in your app and create a Firebase App object:
 import { initializeApp } from 'firebase/app';
-import { GoogleAuthProvider ,getAuth,signInWithPopup} from "firebase/auth";
+import { GoogleAuthProvider ,getAuth,signInWithPopup,onAuthStateChanged} from "firebase/auth";
 //import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-import Button from "./components/Button"
-i//mport {useAuthState,useDarkMode} from './'
+//import Button from "./components/Button"
+//import hooks
+import {useAuthState} from './hooks'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,33 +23,42 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
+const auth=getAuth();
 
 
 
 
 function App() {
- const {user,initializing}=use
-
+//const {user,initializing}=useAuthState(auth);
   //Implementing onClick event 
+//retrieve Google provider object (https://firebase.google.com/docs/auth/web/google-signin)
 const signInWithGoogle=async()=>{
-  //retrieve Google provider object
+     //
+//const {user,initializing}=useAuthState(getAuth());
+  
   const provider= new GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   //set Language to the default browser prefrence
-  const auth=getAuth();
+  
+
   auth.languageCode='it';
+
+  console.log("aya")
   //Starting sign In process
   try{
-    await signInWithPopup(provider);
+    await signInWithPopup(auth,provider);
+    console.log("aya try")
 
   }catch(error){
+    console.log("aya eror ")
+    console.log(error.code);
     console.log(error.message);
   }
 };
 
 
   return (
-    <Button onClick={signInWithGoogle}>sign In With Google</Button>
+    <button onClick={signInWithGoogle}>sign In With Google</button>
   );
 }
 
