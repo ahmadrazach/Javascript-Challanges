@@ -1,29 +1,25 @@
-import useState, { useEffect } from "react";
+import  {useState, useEffect ,useRef} from "react";
 //firebase and firestore functions
 import { getFirestore,collection,query,orderBy,limit,onSnapshot,doc,getDocs,setDocs,Timestamp  } from "firebase/firestore";
+import { useFirestoreQuery } from "../hooks";
 import Message from './Message'
 const Channel=({user=null})=>{
     const db=getFirestore();
     const messagesRef=collection(db,"messages");
+    const messages = useFirestoreQuery(
+        messagesRef.orderBy('createdAt','desc').limit(100)
+    );
+    const [newMessage,setNewMessage]=useState("");
     
-    const [messages,setMessages]=useState([]);
-    
+    const inputRef=useRef();
+    const bottomListRef=useRef();
+    const {uid,displayName,photoURL}=user;
     useEffect(()=>{
-      // Subscribe to query with onSnapshot
-        const unsubscribe = query.onSnapshot(querySnapshot => {
-             // Get all documents from collection - with IDs
-             const data=querySnapshot.docs.map(doc=>({
-                 ...doc.data(),id:doc.id
-             }));
-             //update state
-             setDocs(data);
+        if(inputRef.current){
+            inputRef.current.focus();
+        }
+    },[inputRef]);
 
-        });
-
-        //Detach listener
-        return unsubscribe;
-
-    },[]);
 
     //for handeling change
     const handleOnChange=e=>{
@@ -48,6 +44,15 @@ const Channel=({user=null})=>{
     }
     return (
         <>
+            <div className="">
+                <div className="">
+                    <p className="">Welcome to</p>
+                    <p className="">React FireChat</p>
+                </div>
+                <p className="text-gray-400 text-center">
+                This is the beginning of this chat.
+                </p>
+            </div>
             <ul>
                 {messages.map(message=>{
                 <li key={message.id}>
