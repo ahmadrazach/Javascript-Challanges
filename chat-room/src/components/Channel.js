@@ -1,6 +1,6 @@
 import useState, { useEffect } from "react";
 //firebase and firestore functions
-import { getFirestore,collection,query,orderBy,limit,onSnapshot,doc,getDocs,setDocs  } from "firebase/firestore";
+import { getFirestore,collection,query,orderBy,limit,onSnapshot,doc,getDocs,setDocs,Timestamp  } from "firebase/firestore";
 
 const Channel=({user=null})=>{
     const db=getFirestore();
@@ -27,6 +27,23 @@ const Channel=({user=null})=>{
     //for handeling change
     const handleOnChange=e=>{
         setNewMessage(e.target.value);
+    }
+    //onSubmit function
+    const handleOnSubmit=e=>{
+        e.preventDefault();
+        const trimmedMessage=newMessage.trim();
+        if(trimmedMessage){
+            //Add new message in the firestore
+            messagesRef.add({
+                text:trimmedMessage,
+                createdAt:Timestamp.fromDate(now),
+                uid,
+                displayName,
+                photoURL,
+            });
+            //clear input field
+            setNewMessage('');
+        }
     }
     return (
         <>
