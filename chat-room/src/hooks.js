@@ -11,7 +11,7 @@ export function useFirestoreQuery(query){
         //use Firestore built-in 'is_Equal method
         //to compare queries
         console.log(query);
-        if(!queryRef?.current?.isEqual(query)){
+        if(!queryRef?.curent?.isEqual(query)){
             queryRef.current=query;
         }
     });

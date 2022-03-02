@@ -67,7 +67,7 @@ const signOutFunc = async () => {
     if(initializing){
       return (
         <div>
-          <h1>Loading</h1>
+          <h3>Loading</h3>
         </div>
       )
     }
