@@ -13,13 +13,12 @@ import Channel from "./components/Channel"
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBJNuSTgFCWlpPAGl4AjgsuLSCiKHBlMT4",
-  authDomain: "chat-room-6f417.firebaseapp.com",
-  projectId: "chat-room-6f417",
-  storageBucket: "chat-room-6f417.appspot.com",
-  messagingSenderId: "815883654830",
-  appId: "1:815883654830:web:f298e5e37f186bedc2bf3f",
-  measurementId: "G-3PMMBMV5F8"
+  apiKey: "AIzaSyB8ebf_ptxv6aeKBzgLBAZBzIK9gjuHrgQ",
+  authDomain: "chatroom-c38f6.firebaseapp.com",
+  projectId: "chatroom-c38f6",
+  storageBucket: "chatroom-c38f6.appspot.com",
+  messagingSenderId: "369968393968",
+  appId: "1:369968393968:web:d9abc51d057547ec0b5c35"
 };
 
 const app = initializeApp(firebaseConfig);
