@@ -4,9 +4,11 @@ import { getFirestore,collection,query,orderBy,limit,Timestamp  } from "firebase
 import { useFirestoreQuery } from "../hooks";
 import Message from './Message';
 import PropTypes from "prop-types"
+
 const Channel=({user=null})=>{
     const db=getFirestore();
     const messagesRef=collection(db,"messages");
+    console.log("Channel.js->messageref",messagesRef)
     const messages = useFirestoreQuery(
         query(messagesRef,orderBy('createdAt','desc'),limit(100))
     );

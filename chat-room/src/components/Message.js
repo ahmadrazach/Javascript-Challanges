@@ -1,6 +1,6 @@
 //creation date that we convert to a more readable format using the date-fns library
 import {formatRelative} from 'date-fns';
-
+import PropTypes from 'prop-types';
 
 const formatDate=date=>{
     let formattedDate='';
@@ -40,4 +40,13 @@ const Message=({
     );
 };
 
+Message.propTypes = {
+    text: PropTypes.string,
+    createdAt: PropTypes.shape({
+      seconds: PropTypes.number,
+    }),
+    displayName: PropTypes.string,
+    photoURL: PropTypes.string,
+  };
+  
 export default Message;

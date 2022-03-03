@@ -31,7 +31,7 @@ const auth=getAuth();
 
 function App() {
 
-  console.log("App.js->auth()",auth)
+  //console.log("App.js->auth()",auth)
   const provider= new GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   //set Language to the default browser prefrence
@@ -39,7 +39,7 @@ function App() {
 
 const {user,initializing}=useAuthState(auth);
  
-console.log("App.js->user",user)
+//console.log("App.js->user",user)
 //Implementing onClick event
 //retrieve Google provider object (https://firebase.google.com/docs/auth/web/google-signin)
 const signInWithGoogle=async()=>{
@@ -55,9 +55,11 @@ const signInWithGoogle=async()=>{
   }catch(error){
     //console.log("aya eror ")
     //console.log(error.code);
+    
     console.log(error.message);
   }
 };
+
 //signing out function
 const signOutFunc = async () => {
  // sign
@@ -101,7 +103,7 @@ const signOutFunc = async () => {
             {
               user ? (
                <button 
-                  onClick={signOut}
+                  onClick={signOutFunc}
                 >Sign Out</button>
               ) : null
             }

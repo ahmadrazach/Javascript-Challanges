@@ -11,10 +11,10 @@ export function useFirestoreQuery(query){
     useEffect(()=>{
         //use Firestore built-in 'is_Equal method
         //to compare queries
-        console.log("hooks -> useEffect()",query)
+        //console.log("hooks -> useEffect()",query)
         if(!queryRef?.curent?.isEqual(query)){
             queryRef.current=query;
-            console.log("hooks -> useEffect()->if",queryRef)
+          //  console.log("hooks -> useEffect()->if",queryRef)
         }
     });
     //Re-run data listenet only if query has changed
@@ -37,11 +37,11 @@ export function useFirestoreQuery(query){
     },[queryRef]);
     return docs;
 }
-//useAuthState function
+//useAuthState function : check done
 export function useAuthState(auth) {
 const [initializing, setInitializing] = useState(true);
 const [user, setUser] = useState(() => auth.currentUser);
-
+//console.log("ath.currentuser",user)
 useEffect(() => {
     
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -54,10 +54,10 @@ useEffect(() => {
         setInitializing(false);
     }
     });
-
+    
     // Cleanup subscription
     return unsubscribe;
 }, [auth, initializing]);
-
+//console.log("user",user,"intializing",initializing);
 return { user, initializing };
 }
