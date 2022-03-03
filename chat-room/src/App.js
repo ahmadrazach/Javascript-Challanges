@@ -5,6 +5,9 @@ import { GoogleAuthProvider ,getAuth,signInWithPopup,onAuthStateChanged,signOut}
 //import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import Button from "./components/Button"
 //import hooks
+//import {firebase} from 'firebase/app';
+//import 'firebase/auth';
+//import 'firebase/firestore';
 import {useAuthState} from './hooks'
 import Channel from "./components/Channel"
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,18 +29,22 @@ const auth=getAuth();
 
 
 
-
 function App() {
-const {user,initializing}=useAuthState(auth);
-//Implementing onClick event 
-//retrieve Google provider object (https://firebase.google.com/docs/auth/web/google-signin)
-const signInWithGoogle=async()=>{
 
+  console.log("App.js->auth()",auth)
   const provider= new GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   //set Language to the default browser prefrence
-  
   auth.languageCode='it';
+
+const {user,initializing}=useAuthState(auth);
+ 
+console.log("App.js->user",user)
+//Implementing onClick event
+//retrieve Google provider object (https://firebase.google.com/docs/auth/web/google-signin)
+const signInWithGoogle=async()=>{
+
+
 
   //console.log("aya")
   //Starting sign In process

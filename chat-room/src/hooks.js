@@ -11,9 +11,10 @@ export function useFirestoreQuery(query){
     useEffect(()=>{
         //use Firestore built-in 'is_Equal method
         //to compare queries
-        console.log(query);
+        console.log("hooks -> useEffect()",query)
         if(!queryRef?.curent?.isEqual(query)){
             queryRef.current=query;
+            console.log("hooks -> useEffect()->if",queryRef)
         }
     });
     //Re-run data listenet only if query has changed

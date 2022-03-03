@@ -10,6 +10,7 @@ const Channel=({user=null})=>{
     const messages = useFirestoreQuery(
         query(messagesRef,orderBy('createdAt','desc'),limit(100))
     );
+    console.log("Channel.js->messages",messages)
     const [newMessage,setNewMessage]=useState("");
     
     const inputRef=useRef();
