@@ -6,7 +6,7 @@
 
 Basic Features:
 
-- CRUD (Add,Update and delete) operations with Notes the notes
+- SignIn/Sign Up with Google Authentication
 
 Technologies used:
 
