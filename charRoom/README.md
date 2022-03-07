@@ -14,7 +14,7 @@ Technologies used:
 - Tailwind UI & CSS
 - Javascript
 - React
-- Firebase & Firestore (auth.currentUser,onAuthChanged)
+- Firebase & Firestore (GoogleAuthProvider,signInWithPopup)
 
 - Node packages : firebase
 - hooks (useEffect,useState)

@@ -50,8 +50,8 @@ function App() {
   const [darkMode, setDarkMode] = useDarkMode();
  // console.log("App.js->user",user)
   const brandLogo = darkMode
-    ? `${process.env.PUBLIC_URL}/logo_white.svg`
-    : `${process.env.PUBLIC_URL}/logo.svg`;
+    ? `${process.env.PUBLIC_URL}/ChatRoom.png`
+    : `${process.env.PUBLIC_URL}/ChatRoom-dark.png`;
 
   const ThemeIcon = darkMode ? SunIcon : MoonIcon;
 
@@ -106,7 +106,7 @@ function App() {
             Chat Room
           </h2>
           <p className="mb-8 text-lg text-center">
-            The easiest way to chat with people all around the world.
+            Chat with all the connected members!
           </p>
           <button
             onClick={signInWithGoogle}
@@ -151,8 +151,8 @@ function App() {
         className="flex-shrink-0 flex items-center justify-between px-4 sm:px-8 shadow-md"
         style={{ height: 'var(--topbar-height)' }}
       >
-        <a href="https://alterclass.io/courses/react">
-          <img src={brandLogo} alt="AlterClass" width={150} />
+        <a href="">
+          <img src={brandLogo} alt="Logo" width={130} />
         </a>
         <div className="flex items-center">
           {user ? (
