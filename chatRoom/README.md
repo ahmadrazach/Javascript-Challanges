@@ -11,7 +11,7 @@ Basic Features:
 Technologies used:
 
 - HTML
-- CSS
+- Tailwind CSS
 - Javascript
 - React
 - Firebase & Firestore (auth.currentUser,onAuthChanged)
