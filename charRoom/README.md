@@ -7,6 +7,10 @@
 Basic Features:
 
 - SignIn/Sign Up with Google Authentication
+- Sign In using firebase
+- Saving and viewing time with item
+
+---
 
 Technologies used:
 
