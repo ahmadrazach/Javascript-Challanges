@@ -2,7 +2,7 @@
 
 <a href="">Live Demo</a>
 
-![Demo Image](https://github.com/ahmadrazach/Javascript-Challanges/blob/main/charRoom/public/Chat%20Room.gif
+![Demo Image](https://github.com/ahmadrazach/Javascript-Challanges/blob/main/charRoom/public/Chat%20Room.gif)
 
 Basic Features:
 
