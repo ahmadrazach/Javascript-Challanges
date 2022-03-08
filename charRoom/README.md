@@ -2,7 +2,7 @@
 
 <a href="">Live Demo</a>
 
-<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/notes-app/thumbnail.jpg" alt="Demo image"/>
+![Demo Image](https://github.com/ahmadrazach/Javascript-Challanges/blob/main/charRoom/public/Chat%20Room.gif
 
 Basic Features:
 
@@ -13,8 +13,6 @@ Technologies used:
 - HTML
 - Tailwind UI & CSS
 - Javascript
-- React
+- React (useEffect, useState, useRef, useCallback)
 - Firebase & Firestore (GoogleAuthProvider,signInWithPopup)
-
-- Node packages : firebase
-- hooks (useEffect,useState)
+- Node packages
