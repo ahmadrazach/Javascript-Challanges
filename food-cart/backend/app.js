@@ -1,14 +1,32 @@
-const http = require('http');
+const express = require('express')
+const axios = require('axios')
 
-const hostname = '127.0.0.1';
-const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
+const app = express()
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+const products=[
+  {id:1,name:'product1'},
+  {id:2,name:'product2'},
+  {id:3,name:'product3'},
+]
+
+app.use(express.json())
+app.get('/', (req, res) => {
+  res.send('Hi!')
+})
+
+//getting all the products
+app.get('/api/products', (req, res) => {
+  res.send(products);
+})
+
+//getting one product
+app.get('/api/products/:id',(req,res)=>{
+  const course=products.find(product=>product.id===parseInt(req.params.id));
+  if(!course) res.status(404).send('Did not found the product')
+  res.send(course)
+})
+//PORT
+const port =process.env.PORT||3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`))
+//nodemon app.js to start the server

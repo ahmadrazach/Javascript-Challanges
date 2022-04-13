@@ -23,4 +23,9 @@ Learning Outcomes
 - Functional Components
 
 
-Backend modeules
+Backend node_modules:
+nodemon- for automatically starting of the server
+axios - to perform http request using Node.js
+
+guides used:
+making an http server : https://nodejs.dev/learn/build-an-http-server
