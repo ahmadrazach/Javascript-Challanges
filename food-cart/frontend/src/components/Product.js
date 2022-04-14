@@ -15,7 +15,7 @@ const Product = ({product}) => {
                     {product.rating} from {product.numReviews} reviews
                 </div>
             </Card.Text>
-            <Card.Text as='h3'>Rs {product.price}
+            <Card.Text as='h5'>Rs {product.price}   <i className='fas fa-shopping-cart'></i>
             </Card.Text>
 
         </Card.Body>
