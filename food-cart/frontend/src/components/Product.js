@@ -7,15 +7,15 @@ const Product = ({product}) => {
         <Card.Img src={product.image} variant='top'/>
         <Card.Body>
             <Card.Title as='div'>
-                <strong>{product.name}</strong>
+            <input type='checkbox'/> <strong>{product.name}</strong>   
             </Card.Title>
 
             <Card.Text as='div'>
                 <div className='my-3'>
-                    {product.rating} from {product.numReviews} reviews
+                
                 </div>
             </Card.Text>
-            <Card.Text as='h5'>Rs {product.price}   <i className='fas fa-shopping-cart'></i>
+            <Card.Text as='h5'>Rs {product.price}  
             </Card.Text>
 
         </Card.Body>
