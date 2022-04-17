@@ -1,12 +1,9 @@
 
-import React,{useState,useMemo} from 'react'
-import {Row,Col,ListGroup,Image,Form,Button,Card} from "react-bootstrap"
+import React,{useState} from 'react'
+import {Row,Col,ListGroup,Image,Card} from "react-bootstrap"
 import {Link} from 'react-router-dom'
 
-// var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
-// const setUs =existingEntries;
-// console.log(setUs)
-// import products from './products'
+
 
 const CartScreen = () => {
     
