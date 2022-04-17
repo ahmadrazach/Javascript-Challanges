@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import {Card} from 'react-bootstrap'
-import products from '../products'
+// import products from '../products'
 const Product = ({product}) => {
     //writing data in json file
     
-    const checkBoxChange=(product_id)=>{
-      // product_id.preventDefault();
-      localStorage.setItem('cartItems',{
-        name:product_id.name,
-        image:product_id.image,
-        price:product_id.price,
+    const checkBoxChange=(e)=>{
+      e.preventDefault();
+      // localStorage.setItem('cartItems',{
+      //   name:product_id.name,
+      //   image:product_id.image,
+      //   price:product_id.price,
 
-      })
+      // })
     }
     const [items,saveItems]=useState(0)
   return (
@@ -21,7 +21,7 @@ const Product = ({product}) => {
             <Card.Title as='div'>
             <input 
             type='checkbox'
-            onChange={checkBoxChange(product._id)}
+            onChange={checkBoxChange}
             /> <strong>{product.name}</strong>   
             </Card.Title>
 

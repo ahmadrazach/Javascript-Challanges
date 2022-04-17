@@ -1,7 +1,7 @@
-const express = require('express')
+import express from 'express'
 // const axios = require('axios')
-const products=require('./data/products')
-
+// import products from './data/products'
+import products from './data/products.js'
 const app = express()
 
 
