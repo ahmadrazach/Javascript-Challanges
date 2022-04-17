@@ -1,0 +1,11 @@
+span {
+  cursor: pointer;
+  color: goldenrod;
+}
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  font-size: 50px;
+}
