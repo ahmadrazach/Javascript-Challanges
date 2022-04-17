@@ -4,9 +4,15 @@ import products from '../products'
 const Product = ({product}) => {
     //writing data in json file
     
-    const fs = require("fs");
-    
-    console.log(products)
+    const checkBoxChange=(product_id)=>{
+      // product_id.preventDefault();
+      localStorage.setItem('cartItems',{
+        name:product_id.name,
+        image:product_id.image,
+        price:product_id.price,
+
+      })
+    }
     const [items,saveItems]=useState(0)
   return (
     <Card  className='my-3 m-3 rounded'>
@@ -15,7 +21,7 @@ const Product = ({product}) => {
             <Card.Title as='div'>
             <input 
             type='checkbox'
-            onChange={e=>console.log(product._id)}
+            onChange={checkBoxChange(product._id)}
             /> <strong>{product.name}</strong>   
             </Card.Title>
 

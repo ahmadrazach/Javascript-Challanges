@@ -1,13 +1,9 @@
 # Food cart application
 
-Start the application:
-- backend
+Start the application (both backend and frontend):
+- folder/food-car
 ```
-npm run app.js
-```
-- frontend
-```
-npm run start
+npm run dev
 ```
 
 Node Server
