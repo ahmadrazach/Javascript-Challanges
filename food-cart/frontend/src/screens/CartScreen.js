@@ -1,30 +1,36 @@
 
-import React,{useState} from 'react'
+import React,{useState,useMemo} from 'react'
 import {Row,Col,ListGroup,Image,Form,Button,Card} from "react-bootstrap"
 import {Link} from 'react-router-dom'
-// import {useSelector} from 'react-redux'
-// import 
 
-const CartScreen = ({product}) => {
-  const [cartItems,setCartItems]=useState(0)
+// var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+// const setUs =existingEntries;
+// console.log(setUs)
+// import products from './products'
+
+const CartScreen = () => {
+    
+    //extracting products from the localStorage
+    const [cartItems, setcartItems] = useState(JSON.parse(localStorage.getItem("allEntries")) ?? 0);
+
     return (
     <div>
         <Row>
             <Col md={8}>
                 <h1>Shopping Cart</h1>
-                {cartItems===0?(
+                {cartItems.length===0?(
                     <h4>Your Cart is Empty <Link to='/'>Go Back</Link></h4>
                 ):(
                     <ListGroup variant='flush'>
                     {
-                        cartItems.map(item=>(
+                        cartItems.map((item,i)=>(
                             <ListGroup.Item key={item.product}>
                             <Row>
-                                <Col md={2}>
+                                <Col md={3}>
                                     <Image src={item.image} alt={item.name} fluid rounded/>
                                 </Col>
                                 <Col md={3}>
-                                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                                    <h6>{item.name}</h6>
                                 </Col>
                                 <Col md={2}>$ {item.price}</Col>
                                 
@@ -40,13 +46,12 @@ const CartScreen = ({product}) => {
                     <ListGroup vairant="flush">
                         <ListGroup.Item>
                             <h2>
-                                Subtotal
-                                {/* Subtotal({cartItems.reduce((acc,item)=>acc+item.qty,0)}) items */}
+                                Subtotal ({cartItems.length}) items
                             </h2>
-                            $ Price
+                            Price : 
                             {
-                                // cartItems.reduce((acc,item)=>acc+item.qty*item.price,0).toFixed(2)
-                            }
+                                cartItems.reduce((acc,item)=>acc+item.price,0).toFixed(2)
+                            } Rs
                         </ListGroup.Item>
                     </ListGroup>
                 </Card>

@@ -5,6 +5,8 @@ import Product from '../components/Product'
 import axios from 'axios'
 
 const HomeScreen = () => {
+  //memoization
+  const MProduct=React.memo(Product)
 
   const [products,setProducts]=useState([])
   
@@ -16,6 +18,8 @@ const HomeScreen = () => {
     }
     fetchProducts()
   },[])
+
+
   return (
     <>
     <h1>Fresh Products</h1>
@@ -23,7 +27,7 @@ const HomeScreen = () => {
         {
           products.map((product)=>(
             <Col sm={12} md={6} lg={4} xl={3}>
-                <Product product={product}/>
+                <MProduct product={product}/>
             </Col>
         ))
         }
@@ -32,4 +36,4 @@ const HomeScreen = () => {
   )
 }
 
-export default HomeScreen
+export default React.memo(HomeScreen)
