@@ -13,3 +13,4 @@ Technologies used:
 - HTML
 - CSS
 - Javascript
+- React
