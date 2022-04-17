@@ -1,5 +1,15 @@
 # Food cart application
 
+Start the application:
+- backend
+```
+npm run app.js
+```
+- frontend
+```
+npm run start
+```
+
 Node Server
 You need to create data for at least 10-15 fruits and store it locally on your server, you will also store the images locally on the same server and will send the link of the image along with your API response. The API response should have the following keys
 
