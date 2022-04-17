@@ -14,7 +14,7 @@ const App=()=> {
     <main className='py-3'>
       <Container>
       <Routes>
-        <Route path='/cart' element={<CartScreen/>}/>
+        <Route path='/cart:id' element={<CartScreen/>}/>
         <Route exact path='/' element={<HomeScreen/>}/>
       </Routes>
       </Container>

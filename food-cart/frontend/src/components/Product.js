@@ -21,7 +21,6 @@ const Product = ({product}) => {
             <Card.Title as='div'>
             <input 
             type='checkbox'
-            onChange={checkBoxChange}
             /> <strong>{product.name}</strong>   
             </Card.Title>
 
