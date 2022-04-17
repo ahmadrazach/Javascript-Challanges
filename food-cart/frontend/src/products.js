@@ -11,6 +11,7 @@ const products = [
     countInStock: 10,
     rating: 4.5,
     numReviews: 12,
+    isChecked: false 
   },
   {
     _id: '2',
@@ -24,6 +25,7 @@ const products = [
     countInStock: 7,
     rating: 4.0,
     numReviews: 8,
+    isChecked: false 
   },
   {
     _id: '3',
@@ -37,6 +39,7 @@ const products = [
     countInStock: 5,
     rating: 3,
     numReviews: 12,
+    isChecked: false 
   },
   {
     _id: '4',
@@ -50,6 +53,7 @@ const products = [
     countInStock: 11,
     rating: 5,
     numReviews: 12,
+    isChecked: false 
   },
   {
     _id: '5',
@@ -63,6 +67,7 @@ const products = [
     countInStock: 7,
     rating: 3.5,
     numReviews: 10,
+    isChecked: false 
   },
   {
     _id: '6',
@@ -76,6 +81,7 @@ const products = [
     countInStock: 0,
     rating: 4,
     numReviews: 12,
+    isChecked: false 
   },
 ]
 

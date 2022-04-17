@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 // import {useSelector} from 'react-redux'
 // import 
 
-const CartScreen = () => {
+const CartScreen = ({product}) => {
   const [cartItems,setCartItems]=useState(0)
     return (
     <div>
