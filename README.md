@@ -9,3 +9,5 @@
 | Weather Check   | <a href="https://weather-app-ahmadrazach.vercel.app/">Live Demo</a> | <img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/weather-app/thumbnail.jpg" alt="Demo image"/> |
 | Chat Room       | <a href="https://chatroomahmed.netlify.app/">Live Demo</a>          | ![Demo Image](https://github.com/ahmadrazach/Javascript-Challanges/blob/main/charRoom/public/Chat%20Room.gif)          |
 | Food Cart       | <a href="https://github.com/ahmadrazach/Javascript-Challanges/tree/main/food-cart">Source Code</a>          | ![Demo Image](https://github.com/ahmadrazach/Javascript-Challanges/blob/main/food-cart/React%20App.gif)          |
+| Star Rating       | <a href="https://starrating.vercel.app/">Live Demo</a>          | ![Demo Image](https://github.com/ahmadrazach/Javascript-Challanges/blob/main/food-cart/React%20App.gif)          |
+| Progress Bar       | <a href="https://progressbarreact.vercel.app/">Live Demo</a>          | ![Demo Image](https://github.com/ahmadrazach/Javascript-Challanges/blob/main/food-cart/React%20App.gif)          |

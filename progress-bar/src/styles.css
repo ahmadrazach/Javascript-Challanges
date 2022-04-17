@@ -1,0 +1,20 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: whitesmoke;
+  color: grey;
+  text-align: center;
+}
+progress {
+  height: 10vh;
+  width: 50vw;
+  -webkit-transition: width 0.3s ease;
+  -o-transition: width 0.3 ease;
+  transition: width 0.3 ease;
+}
