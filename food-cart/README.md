@@ -1,12 +1,16 @@
 # Food cart React application
 
+
+<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/food-cart/React%20App.gif" alt="Demo image"/>
+
 Start the application (both backend and frontend):
+
+
 - folder/food-cart
 ```
 npm run dev
 ```
 
-<img src="https://github.com/ahmadrazach/Javascript-Challanges/blob/main/food-cart/React%20App.gif" alt="Demo image"/>
 Basic Features:
  
 - adding product to cart
