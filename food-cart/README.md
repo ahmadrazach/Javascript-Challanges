@@ -35,3 +35,29 @@ axios - to perform http request using Node.js
 
 guides used:
 making an http server : https://nodejs.dev/learn/build-an-http-server
+
+# Food Cart React Application
+
+<a href="">Live Demo</a>
+
+<img src="" alt="Demo image"/>
+Basic Features:
+ 
+- adding product to cart
+- cart screen with Cart products and total price 
+
+Technologies used:
+
+- HTML
+- CSS
+- Javascript
+
+- React
+    - React Memo
+    - Functional components
+    - Routing
+    - Axios
+- Backend
+ - NodeJS
+ - Express
+- Browser Local Storage
