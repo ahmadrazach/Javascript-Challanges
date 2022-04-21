@@ -17,9 +17,9 @@ function whatIsInAName(collection, source) {
             console.log(souceKeys[i])
             if(item[souceKeys[i]]!==source[souceKeys[i]]|| !item.hasOwnProperty(souceKeys[i]))
                 return false
-            else
-                return true
+
         }
+        return true
 
     })
   }
