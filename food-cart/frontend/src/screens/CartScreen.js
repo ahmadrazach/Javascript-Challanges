@@ -29,7 +29,7 @@ const CartScreen = () => {
                                 <Col md={3}>
                                     <h6>{item.name}</h6>
                                 </Col>
-                                <Col md={2}>$ {item.price}</Col>
+                                <Col md={2}>Rs {item.price}</Col>
                                 
                             </Row>
                         </ListGroup.Item>
