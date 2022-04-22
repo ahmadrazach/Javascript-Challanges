@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState,Suspense} from 'react'
 import {Row,Col} from 'react-bootstrap'
 // import Product from '../components/Product'
 import axios from 'axios'
@@ -25,15 +25,17 @@ const HomeScreen = () => {
   return (
     <>
     <h1>Fresh Products</h1>
-    <Row>
-        {
-          products.map((product,key)=>(
-            <Col sm={12} md={6} lg={4} xl={3} key={key}>
-                <Product product={product}/>
-            </Col>
-        ))
-        }
-    </Row>
+    <Suspense fallback={<div>Loading......</div>}>
+      <Row>
+          {
+            products.map((product,key)=>(
+              <Col sm={12} md={6} lg={4} xl={3} key={key}>              
+                  <Product product={product}/>
+              </Col>
+          ))
+          }
+      </Row>
+    </Suspense>
     </>
   )
 }
