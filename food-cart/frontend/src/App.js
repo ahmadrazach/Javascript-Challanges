@@ -3,23 +3,28 @@ import './App.css';
 import Header from './components/Header';
 import {Container} from 'react-bootstrap'
 import Footer from './components/Footer';
-import HomeScreen from './screens/HomeScreen';
+// import HomeScreen from './screens/HomeScreen';
 import {BorwserRouter,Routes,Route, BrowserRouter} from 'react-router-dom';
-import CartScreen from './screens/CartScreen';
+import React, { Suspense, lazy } from 'react';
+const HomeScreen=lazy(()=>import('./screens/HomeScreen'));
+const CartScreen =lazy(()=>import('./screens/CartScreen')) ;
+
 
 const App=()=> {
   return (
     <BrowserRouter>
-    <Header/>
-    <main className='py-3'>
-      <Container>
-      <Routes>
-        <Route path='/cart' element={<CartScreen/>}/>
-        <Route exact path='/' element={<HomeScreen/>}/>
-      </Routes>
-      </Container>
-    </main>
-    <Footer/>
+      <Header/>
+      <main className='py-3'>
+        <Container>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path='/cart' element={<CartScreen/>}/>
+              <Route exact path='/' element={<HomeScreen/>}/>
+            </Routes>
+          </Suspense>
+        </Container>
+      </main>
+      <Footer/>
     </BrowserRouter>
   );
 }
