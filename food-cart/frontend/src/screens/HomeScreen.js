@@ -1,7 +1,10 @@
 import React,{useEffect, useState} from 'react'
 import {Row,Col} from 'react-bootstrap'
-import Product from '../components/Product'
+// import Product from '../components/Product'
 import axios from 'axios'
+
+//lazy loading
+const Product=React.lazy(()=>import ('../components/Product'))
 
 const HomeScreen = () => {
   //memoization
@@ -24,9 +27,9 @@ const HomeScreen = () => {
     <h1>Fresh Products</h1>
     <Row>
         {
-          products.map((product)=>(
-            <Col sm={12} md={6} lg={4} xl={3}>
-                <MProduct product={product}/>
+          products.map((product,key)=>(
+            <Col sm={12} md={6} lg={4} xl={3} key={key}>
+                <Product product={product}/>
             </Col>
         ))
         }
