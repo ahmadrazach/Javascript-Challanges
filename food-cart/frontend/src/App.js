@@ -1,13 +1,11 @@
 
-import './App.css';
 import Header from './components/Header';
 import {Container} from 'react-bootstrap'
 import Footer from './components/Footer';
-import {BorwserRouter,Routes,Route, BrowserRouter} from 'react-router-dom';
+import {Routes,Route, BrowserRouter} from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
 const HomeScreen=lazy(()=>import('./screens/HomeScreen'));
 const CartScreen =lazy(()=>import('./screens/CartScreen')) ;
-
 
 const App=()=> {
   return (
