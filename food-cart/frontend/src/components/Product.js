@@ -3,7 +3,7 @@ import {Card} from 'react-bootstrap'
 // import products from '../products'
 const Product = ({product}) => {
 
-
+  
     const saveItem=(e)=>{
       
       var existingEntries = JSON.parse(localStorage.getItem("allEntries"))||[];

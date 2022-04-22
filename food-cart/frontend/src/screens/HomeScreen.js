@@ -1,9 +1,6 @@
 import React,{useEffect, useState,Suspense} from 'react'
 import {Row,Col} from 'react-bootstrap'
-// import Product from '../components/Product'
 import axios from 'axios'
-
-import { Ring } from '@uiball/loaders'
 import Loader from '../components/Loader'
 import {ErrorBoundary} from 'react-error-boundary'
 
@@ -25,16 +22,13 @@ const HomeScreen = () => {
     fetchProducts()
   },[])
 
-
-  
   return (
     <>
+    <ErrorBoundary FallbackComponent={<h3>Unknown error, kindly refresh</h3>} onReset={()=>{}}>
       <h1>Fresh Products</h1>
-      
-      <ErrorBoundary FallbackComponent={Loader} onReset={()=>{}}>
         <Suspense fallback={
           <>
-            <Ring/>
+            <Loader/>
             <h3> Fetching Products ...</h3>
           </>
         }>
