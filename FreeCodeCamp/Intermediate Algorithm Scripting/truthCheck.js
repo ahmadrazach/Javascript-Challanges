@@ -1,11 +1,22 @@
 function truthCheck(collection, pre) {
-    console.log(col)
     //loop to all collection
     //if collection[pre]===false
-    return false
+    let boolean = false
 
-    return true;
+    for(var collec_index in collection)
+    {
+        console.log(collection[collec_index][pre],collection[collec_index])
+        if(!collection[collec_index][pre])
+        {
+            return false 
+        }
+    }
+    
+    return true
+    
   }
   
-  truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false},
-   {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
+  console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, 
+  {name: "Naomi", role: "", isBot: false}, 
+  {name: "Camperbot", role: "Bot", isBot: true}],
+   "role"));
