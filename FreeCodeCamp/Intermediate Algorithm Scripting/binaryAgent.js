@@ -1,4 +1,5 @@
 function binaryAgent(str) {
+    //1- convert from dinary to decimal translating values in characters
     
     return str;
   }
