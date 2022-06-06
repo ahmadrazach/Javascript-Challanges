@@ -5,8 +5,6 @@ import products from './data/products.js'
 const app = express()
 
 
-
-
 app.use(express.json())
 app.get('/', (req, res) => {
   res.send('Hii!')
