@@ -24,10 +24,18 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>React Simple Markdown</h1>
+        
       </header>
       <div className='app-body'>
         <div className='input-text'>
           <h2>Input here</h2>
+          <p>You can use mardown signs like</p>
+          <ol>
+            <li>#,##, ### for headings</li>
+            <li>``` for code</li>
+            <li>Use this <a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'>Sheet</a> for more features</li>
+
+          </ol>
           <textarea className="input-textarea" value={input} onChange={handleChange} >
           </textarea>
         </div>

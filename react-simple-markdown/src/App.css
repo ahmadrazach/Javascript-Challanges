@@ -23,8 +23,13 @@
 }
 .preview-text,.input-text{
   width: 50%;
+  
 }
-
+.input-text p,li{
+  font-weight: bold;
+  text-align: none;
+  margin-left:3vw;
+} 
 .output-textarea
 {
   border: 1px solid black; 
