@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import logo from './logo.svg';
+import {marked} from "marked";
 import './App.css';
+
 
 function App() {
 
@@ -11,11 +12,15 @@ function App() {
     setInput(e.target.value);
   }
 
+  const getMarkdownText = () => {
+    const rawMarkup = marked(input, { sanitize: true   });
+    return { __html: rawMarkup };
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>React Simple Markdown</h1>
-        
       </header>
       <div className='app-body'>
         <div className='input-text'>
@@ -25,7 +30,7 @@ function App() {
         <div className="preview-text">          
           <h2>Preview</h2>
           <div className="output-textarea">
-            <p>{input}</p>
+            <div dangerouslySetInnerHTML={getMarkdownText()} />
           </div>
         </div>
       </div>

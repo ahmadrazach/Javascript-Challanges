@@ -15,9 +15,13 @@
 }
 .input-textarea {
   width: 90%;
+  height: 20vh;
+  background-color: #ebeaea;
+  border: none;
 }
 .preview-text,.input-text{
   width: 50%;
+  
 }
 
 .output-textarea
