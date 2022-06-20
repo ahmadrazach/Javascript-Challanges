@@ -6,6 +6,7 @@
   height: 20vmin;
   pointer-events: none;
 }
+
 .app-body{
   display: flex;
   width: 80%;
@@ -13,6 +14,7 @@
   justify-content: space-around;
   padding: 2%;
 }
+
 .input-textarea {
   width: 90%;
   height: 20vh;
@@ -21,7 +23,6 @@
 }
 .preview-text,.input-text{
   width: 50%;
-  
 }
 
 .output-textarea
