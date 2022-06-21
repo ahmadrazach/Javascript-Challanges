@@ -25,23 +25,23 @@ function App() {
               <Col >
                 <Row className='m-2'>
                   <Col className="d-flex justify-content-around">
-                    <Button as="input" type="button" value="Input" />
-                    <Button as="input" type="button" value="Input" />
-                    <Button as="input" type="button" value="Input" />
+                    <Button as="input" type="button" value="Q" style={{width:"70px"}}/>
+                    <Button as="input" type="button" value="W" style={{width:"70px"}}/>
+                    <Button as="input" type="button" value="E" style={{width:"70px"}}/>
                   </Col>
                 </Row>
                 <Row className='m-2'>
                   <Col className="d-flex justify-content-around">
-                    <Button as="input" type="button" value="Input" />
-                    <Button as="input" type="button" value="Input" />
-                    <Button as="input" type="button" value="Input" />
+                    <Button as="input" type="button" value="A" style={{width:"70px"}}/>
+                    <Button as="input" type="button" value="S" style={{width:"70px"}}/>
+                    <Button as="input" type="button" value="D" style={{width:"70px"}}/>
                   </Col>
                 </Row>
                 <Row className='m-2'>
                   <Col className="d-flex justify-content-around">
-                    <Button as="input" type="button" value="Input" />
-                    <Button as="input" type="button" value="Input" />
-                    <Button as="input" type="button" value="Input" />
+                    <Button as="input" type="button" value="Z" style={{width:"70px"}}/>
+                    <Button as="input" type="button" value="X" style={{width:"70px"}}/>
+                    <Button as="input" type="button" value="C" style={{width:"70px"}}/>
                   </Col>
                 </Row>
                 
@@ -55,10 +55,11 @@ function App() {
                       label="Power"
                     />
                 </Row>
-                <Row className="m-2">
-                  <input type="text" readOnly/>
+                <Row className="m-2" >
+                  <input  type="text" readOnly style={{border:"none",borderRadius:"5px"}}/>
                 </Row>
                 <Row className="m-2">
+                  <h6>Volume</h6>
                   <input type="range" readOnly/>
                 </Row>
                 <Row className="m-2">
