@@ -4,19 +4,23 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import { useRef, useState } from 'react';
 
 //function for the Drum Buttons
 
-const DrumRow=({check})=>
+const DrumRow=(props)=>
   (
-    
-    <Button as="input" type="button" value={check.btn} style={{width:"70px"}}/>
+    <div onClick={()=>props.handleClick(props)} >
+      <Button as="input" type="button" value={props.btn} style={{width:"70px",margin:'5px'}}/>
+      <audio ref={props.id} src={props.src}/>
+    </div>
   )
 
 function App() {
 
+  //
+  const [clickBtn,setClickBtn]=useState("");
+  const [Volume,setVolume]=useState(100);
   //sounds
 const sounds = [
   {
@@ -85,10 +89,20 @@ const sounds = [
   
   
 //playAudio funcrion
-const playAudio=(audio)=>{
-  const audioToPlay=new Audio(audio);
-  audioToPlay();
+const playAudio=({src})=>{
+  // console.log(Volume)
+
+  const audioToPlay=new Audio(src);
+  audioToPlay.volume=Volume;
+  audioToPlay.play();
+
 }
+
+const handleChange = e => {
+  setVolume(e.target.value/100);
+};
+
+
   return (
     <Container fluid>
 
@@ -105,34 +119,12 @@ const playAudio=(audio)=>{
           <Col className="">
             <Row className='card-row' >
               {/* column for the buttons  */}
-              <Col lg={3}>
-                
-                {/* <Row className='m-2'>
-                  <Col className="d-flex justify-content-around">
-                    <Button as="input" type="button" value="Q" style={{width:"70px"}}/>
-                    <Button as="input" type="button" value="W" style={{width:"70px"}}/>
-                    <Button as="input" type="button" value="E" style={{width:"70px"}}/>
-                  </Col>
-                </Row>
-                <Row className='m-2'>
-                  <Col className="d-flex justify-content-around">
-                    <Button as="input" type="button" value="A" style={{width:"70px"}}/>
-                    <Button as="input" type="button" value="S" style={{width:"70px"}}/>
-                    <Button as="input" type="button" value="D" style={{width:"70px"}}/>
-                  </Col>
-                </Row>
-                <Row className='m-2'>
-                  <Col className="d-flex justify-content-around">
-                    <Button as="input" type="button" value="Z" style={{width:"70px"}}/>
-                    <Button as="input" type="button" value="X" style={{width:"70px"}}/>
-                    <Button as="input" type="button" value="C" style={{width:"70px"}}/>
-                  </Col>
-                </Row> */}
-                { 
-        sounds.map((btn,key)=>(
-          <DrumRow check={btn} key={btn.id} handleClick={playAudio}/>
-        ))
-      }
+              <Col className='d-flex flex-wrap'>
+              { 
+                sounds.map((sound,key)=>(
+                  <DrumRow src={sound.src} btn={sound.btn} key={sound.id} handleClick={playAudio}/>
+                ))
+              }
               </Col>
               {/* for the actions */}
               <Col className="flex-col justify-content-center">
@@ -144,11 +136,11 @@ const playAudio=(audio)=>{
                     />
                 </Row>
                 <Row className="m-2" >
-                  <input  type="text" readOnly style={{border:"none",borderRadius:"5px"}}/>
+                  <input  type="text" readOnly value={clickBtn} style={{border:"none",borderRadius:"5px"}}/>
                 </Row>
                 <Row className="m-2">
                   <h6>Volume</h6>
-                  <input type="range" readOnly/>
+                  <input type="range" onChange={e => handleChange(e)}/>
                 </Row>
                 <Row className="m-2">
                   <Form.Check 
