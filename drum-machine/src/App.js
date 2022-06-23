@@ -8,10 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //function for the Drum Buttons
-function DrumRow()
-{
-       <p>Hy</p>
-}
+
+const DrumRow=({check})=>
+  (
+    
+    <Button as="input" type="button" value={check.btn} style={{width:"70px"}}/>
+  )
 
 function App() {
 
@@ -82,6 +84,11 @@ const sounds = [
 ];
   
   
+//playAudio funcrion
+const playAudio=(audio)=>{
+  const audioToPlay=new Audio(audio);
+  audioToPlay();
+}
   return (
     <Container fluid>
 
@@ -96,12 +103,10 @@ const sounds = [
       <Row className="mx-auto mt-5 bg-secondary" style={{width:'50%'}}>
         <Row className='m-2'>
           <Col className="">
-            <Row className='card-row' style={{}}>
+            <Row className='card-row' >
               {/* column for the buttons  */}
-              <Col >
-                {/* sounds.map((btn)=>(
-                  <DrumRow src={btn.id}/>
-                )); */}
+              <Col lg={3}>
+                
                 {/* <Row className='m-2'>
                   <Col className="d-flex justify-content-around">
                     <Button as="input" type="button" value="Q" style={{width:"70px"}}/>
@@ -123,7 +128,11 @@ const sounds = [
                     <Button as="input" type="button" value="C" style={{width:"70px"}}/>
                   </Col>
                 </Row> */}
-                
+                { 
+        sounds.map((btn,key)=>(
+          <DrumRow check={btn} key={btn.id} handleClick={playAudio}/>
+        ))
+      }
               </Col>
               {/* for the actions */}
               <Col className="flex-col justify-content-center">
@@ -153,6 +162,7 @@ const sounds = [
           </Col>
         </Row>
       </Row>
+      
     </Container>
     );
 }
