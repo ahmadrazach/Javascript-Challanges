@@ -89,9 +89,9 @@ const sounds = [
   
   
 //playAudio funcrion
-const playAudio=({src})=>{
+const playAudio=({btn,src})=>{
   // console.log(Volume)
-
+  setClickBtn(btn);
   const audioToPlay=new Audio(src);
   audioToPlay.volume=Volume;
   audioToPlay.play();
