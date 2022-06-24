@@ -20,7 +20,8 @@ function App() {
 
   //
   const [clickBtn,setClickBtn]=useState("");
-  const [Volume,setVolume]=useState(100);
+  const [power,setPower]=useState(true);
+  const [Volume,setVolume]=useState(1);
   //sounds
 const sounds = [
   {
@@ -87,21 +88,35 @@ const sounds = [
   }
 ];
   
-  
-//playAudio funcrion
+
+/**
+ * It takes an object with two properties, btn and src, and plays the audio file at the src location,
+ * and sets the clickBtn state to the btn property
+ */
 const playAudio=({btn,src})=>{
-  // console.log(Volume)
-  setClickBtn(btn);
+  setClickBtn(btn)
   const audioToPlay=new Audio(src);
   audioToPlay.volume=Volume;
-  audioToPlay.play();
-
+  if(power)
+  {
+    audioToPlay.play();
+  }
 }
 
+/**
+ * It takes the value of the slider and divides it by 100 to get a number between 0 and 1
+ */
 const handleChange = e => {
   setVolume(e.target.value/100);
 };
 
+/**
+ * `handlePowerChange` is a function that takes an event as an argument, and sets the power state to
+ * the value of the event's target's checked property
+ */
+const handlePowerChange=e=>{
+  setPower(e.target.checked)
+}
 
   return (
     <Container fluid>
@@ -119,7 +134,7 @@ const handleChange = e => {
           <Col className="">
             <Row className='card-row' >
               {/* column for the buttons  */}
-              <Col className='d-flex flex-wrap'>
+              <Col className='d-flex flex-wrap' lg={{span:5}}>
               { 
                 sounds.map((sound,key)=>(
                   <DrumRow src={sound.src} btn={sound.btn} key={sound.id} handleClick={playAudio}/>
@@ -128,26 +143,20 @@ const handleChange = e => {
               </Col>
               {/* for the actions */}
               <Col className="flex-col justify-content-center">
-                <Row className="m-2">
-                  <Form.Check 
-                      type="switch"
-                      id="custom-switch"
-                      label="Power"
-                    />
+                <Row className="m-3">
+                  <Col xs={1}>
+                    <input type="checkbox" onClick={e=>handlePowerChange(e)}/>
+                  </Col>
+                  <Col>
+                      <h6> Power</h6>
+                  </Col>
                 </Row>
-                <Row className="m-2" >
+                <Row className="m-3" >
                   <input  type="text" readOnly value={clickBtn} style={{border:"none",borderRadius:"5px"}}/>
                 </Row>
-                <Row className="m-2">
+                <Row className="m-3">
                   <h6>Volume</h6>
                   <input type="range" onChange={e => handleChange(e)}/>
-                </Row>
-                <Row className="m-2">
-                  <Form.Check 
-                    type="switch"
-                    id="custom-switch"
-                    label="Back"
-                  />
                 </Row>
               </Col>
             </Row>
