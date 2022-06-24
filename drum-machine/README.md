@@ -9,7 +9,7 @@ Basic Features:
 - clicking on the button will make sound
 - Power on/off the drum machine
 - altering volume of the sound
--
+- showing which btn clicked
 
 Technologies used:
 
