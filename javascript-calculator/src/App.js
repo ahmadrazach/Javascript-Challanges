@@ -108,7 +108,11 @@ function App() {
               </div>
             </div>
           </div>
+          <div className="mt-4 d-flex justify-content-center">
+              <p>made by <a href="https://github.com/ahmadrazach">Ahmed</a></p>
+          </div>
     </Container>
+
   );
 }
 
