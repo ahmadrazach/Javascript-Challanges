@@ -15,7 +15,10 @@ function App() {
 
     //checking if one condition is already present
     // if(nvalue.indexOf('/')!==-1||nvalue.indexOf('x')!==-1||nvalue.indexOf('+')!==-1||nvalue.indexOf('-')!==-1)
-    setNvalue(nvalue+e.target.value);
+    if(nvalue.length===1 && nvalue[0]==0 && e.target.value==0)
+     alert('2 0s at start not allowed!')
+     else
+     setNvalue(nvalue+e.target.value);
     // else
     // alert('an action is already present.Please calculate it first');
   }
@@ -28,7 +31,7 @@ function App() {
     {
         let arr=valueString.split('/');
         if(arr[1].length>0)
-          setNvalue(arr[0]/arr[1])
+          setNvalue((arr[0]/arr[1]).toFixed(3))
         else
           alert('give value after action');
 
