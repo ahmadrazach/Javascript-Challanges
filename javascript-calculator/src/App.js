@@ -8,14 +8,58 @@ import {useState} from 'react';
 function App() {
 
   // saving value of the number
-  const [nvalue,setNvalue]=useState([]);
+  const [nvalue,setNvalue]=useState("");
 
   //function to add all the clicked buttons into
   const addValue=(e)=>{
-    
+
+    //checking if one condition is already present
+    // if(nvalue.indexOf('/')!==-1||nvalue.indexOf('x')!==-1||nvalue.indexOf('+')!==-1||nvalue.indexOf('-')!==-1)
     setNvalue(nvalue+e.target.value);
+    // else
+    // alert('an action is already present.Please calculate it first');
   }
 
+  //calculating result
+  const calculateResult=(valueString)=>{
+
+    //checking which calulation value(+,-,X,/) is present
+    if(valueString.indexOf('/')!==-1)
+    {
+        let arr=valueString.split('/');
+        if(arr[1].length>0)
+          setNvalue(arr[0]/arr[1])
+        else
+          alert('give value after action');
+
+    }
+    else if(valueString.indexOf('x')!==-1)
+    {
+      let arr=valueString.split('x');
+      if(arr[1].length>0)
+          setNvalue(arr[0]*arr[1])
+      else
+        alert('give value after action');
+    }
+    else if(valueString.indexOf('+')!==-1)
+    {
+      let arr=valueString.split('+');
+      if(arr[1].length>0)
+         setNvalue(parseInt(arr[0])+parseInt(arr[1]))
+      else
+        alert('give value after action');
+    }
+    else if(valueString.indexOf('-')!==-1)
+    {
+      let arr=valueString.split('-');
+      if(arr[1].length>0)
+          setNvalue(arr[0]-arr[1])
+      else
+        alert('give value after action');
+    }else{
+      alert('please add an action')
+    }
+  }
   return (
     <Container className="w-50 m-auto">
           {/* Heading */}
@@ -29,7 +73,7 @@ function App() {
               {/* R2 - actions (/,x,-,+)*/}
               <div className="d-flex justify-evenly">
                 <Button variant="secondary" className="w-25 m-1"  value='/' onClick={e=>addValue(e)}>/</Button>
-                <Button variant="secondary" className="w-25 m-1"  value='X' onClick={e=>addValue(e)}>X</Button>
+                <Button variant="secondary" className="w-25 m-1"  value='x' onClick={e=>addValue(e)}>X</Button>
                 <Button variant="secondary" className="w-25 m-1"  value='-' onClick={e=>addValue(e)}>-</Button>
                 <Button variant="secondary" className="w-25 m-1"  value='+' onClick={e=>addValue(e)}>+</Button>
               </div>
@@ -37,7 +81,7 @@ function App() {
               {/* R3 - actions (=,AC)*/}
               <div className="d-flex justify-evenly">
                 <Button variant="danger" className="w-50 m-1" onClick={e=>setNvalue([])}>AC</Button>
-                <Button variant="primary" className="w-50 m-1">=</Button>
+                <Button variant="primary" className="w-50 m-1" onClick={e=>calculateResult(nvalue)}>=</Button>
               </div>
               {/* R4 - btns (9,0,.)*/}
               <div className="d-flex justify-evenly">
