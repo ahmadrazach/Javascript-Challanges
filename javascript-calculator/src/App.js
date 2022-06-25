@@ -45,7 +45,7 @@ function App() {
     {
       let arr=valueString.split('+');
       if(arr[1].length>0)
-         setNvalue(parseInt(arr[0])+parseInt(arr[1]))
+         setNvalue(parseFloat(arr[0])+parseFloat(arr[1]))
       else
         alert('give value after action');
     }
