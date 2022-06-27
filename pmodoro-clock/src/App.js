@@ -1,8 +1,36 @@
 
 import Container from "react-bootstrap/Container";
-
+import {useState} from "react";
 
 function App() {
+
+  //state of our timer
+  const [timer,setTimer]=useState('25:00');
+
+  // const getTimeRemaining=(e)=>{
+  //   const total=Date.parse(e)-Date.parse(new Date());
+  //   const seconds = Math.floor((total / 1000) % 60);
+  //   const minutes = Math.floor((total / 1000 / 60) % 60);
+  //   return {
+  //     total,minutes,seconds
+  //   }
+  // }
+
+  // const startTimer = (e) => {
+  //       let { total, minutes, seconds } 
+  //                   = getTimeRemaining(e);
+  //       if (total >= 0) {
+  
+  //           // update the timer
+  //           // check if less than 10 then we need to 
+  //           // add '0' at the beginning of the variable
+  //           setTimer(
+  //               (hours > 9 ? hours : '0' + hours) + ':' +
+  //               (minutes > 9 ? minutes : '0' + minutes) + ':'
+  //               + (seconds > 9 ? seconds : '0' + seconds)
+  //           )
+  //       }
+  //   }
   return (
     <div  >
     <Container >
@@ -64,7 +92,7 @@ function App() {
 
           <h4 className="mt-2">Clock</h4>
           <div className="d-flex align-items-center justify-content-center" style={{backgroundColor:"#737373",width:'170px',height:'170px',borderRadius:'50%',color:"#FAFAF9"}}>
-            <h3>25:00</h3>
+            <h3>{timer}</h3>
           </div>
           <div className="d-flex mx-4 my-2">
             
