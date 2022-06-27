@@ -12,12 +12,12 @@ function App() {
       {/* Heading */}
       <h1 className="mt-3 text-center"><i className="bi bi-clock"></i> Pmodoro Clock</h1>
       {/* div of session and break */}
-      <div className="d-flex flex-row mt-4 justify-content-between" style={{border:'1px solid black'}}>
+      <div className="d-flex flex-row mt-4 justify-content-between" >
         
         {/* Break Div */}
-        <div className="d-flex flex-column align-items-center" style={{border:'1px solid red'}}>
+        <div className="d-flex flex-column align-items-center" style={{border:'1px solid grey',borderRadius:'25px'}}>
 
-          <h4>Break</h4>
+          <h4 className="mt-2">Break</h4>
           <i className="bi bi-lightning-charge" style={{fontSize:'4rem'}}></i>
           <div className="d-flex mx-4 my-2">
             
@@ -28,9 +28,9 @@ function App() {
         </div>
 
         {/* Session Div */}
-        <div className="d-flex flex-column align-items-center" style={{border:'1px solid red'}}>
+        <div className="d-flex flex-column align-items-center" style={{border:'1px solid grey',borderRadius:'25px'}}>
 
-          <h4>Session</h4>
+          <h4 className="mt-2">Session</h4>
           <i class="bi bi-pc-display-horizontal" style={{fontSize:'4rem'}}></i>
           <div className="d-flex mx-4 my-2">
             
