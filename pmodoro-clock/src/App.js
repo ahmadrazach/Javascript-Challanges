@@ -4,15 +4,15 @@ import Container from "react-bootstrap/Container";
 
 function App() {
   return (
-    <div style={{backgroundColor:'#FAFAF9'}} >
+    <div  >
     <Container >
       {/* Heading */}
-      <h1 className="pt-3 text-center"><i className="bi bi-clock"></i> Pomodoro Clock</h1>
+      <h1 className="p-3 text-center" style={{backgroundColor:'#E7E5E4',borderBottomRightRadius:"15px",borderBottomLeftRadius:'15px'}}><i className="bi bi-clock"></i> Pomodoro Clock</h1>
       {/* div of session and break */}
-      <div className="d-flex flex-row mt-4 justify-content-between" >
+      <div className="d-flex flex-sm-row flex-column mt-4 justify-content-between" >
         
         {/* Break Div */}
-        <div className="d-flex flex-column align-items-center" style={{backgroundColor:'#E7E5E4',borderRadius:'25px'}}>
+        <div className="d-flex flex-column align-items-center m-2 m-md-0" style={{backgroundColor:'#E7E5E4',borderRadius:'25px'}}>
 
           <h4 className="mt-2">Break</h4>
           <i className="bi bi-lightning-charge" style={{fontSize:'4rem'}}></i>
@@ -25,7 +25,7 @@ function App() {
         </div>
 
         {/* Session Div */}
-        <div className="d-flex flex-column align-items-center" style={{backgroundColor:'#E7E5E4',borderRadius:'25px'}}>
+        <div className="d-flex flex-column align-items-center m-2 m-md-0" style={{backgroundColor:'#E7E5E4',borderRadius:'25px'}}>
 
           <h4 className="mt-2">Session</h4>
           <i class="bi bi-pc-display-horizontal" style={{fontSize:'4rem'}}></i>
@@ -39,7 +39,7 @@ function App() {
       </div>
 
       {/* Div of  Task list and Clock*/}
-      <div className="d-flex flex-row  my-5 justify-content-around"  style={{borderRadius:'25px',backgroundColor:'#E7E5E4'}}>
+      <div className="d-flex flex-sm-row flex-column mt-5 justify-content-around"  style={{borderRadius:'25px',backgroundColor:'#E7E5E4'}}>
         
         {/* Break Div */}
         <div className="d-flex flex-column m-2 mx-5" >
@@ -74,8 +74,8 @@ function App() {
           </div>
         </div>
       </div>
-      {/* Footer */}
       <p className="mt-4 text-center" >made by <strong> <a href="https://github.com/ahmadrazach" style={{textDecoration:'none',color:"black"}}>Ahmed</a></strong></p>
+      {/* Footer */}
     </Container>
     </div>
   );
