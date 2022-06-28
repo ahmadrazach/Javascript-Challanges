@@ -1,36 +1,27 @@
 
 import Container from "react-bootstrap/Container";
-import {useState} from "react";
+import {useState,useEffect} from "react";
 
 function App() {
 
   //state of our timer
-  const [timer,setTimer]=useState('25:00');
+  const [minutes,setMinutes]=useState(25);
+  const [seconds,setSeconds]=useState(60);
 
-  // const getTimeRemaining=(e)=>{
-  //   const total=Date.parse(e)-Date.parse(new Date());
-  //   const seconds = Math.floor((total / 1000) % 60);
-  //   const minutes = Math.floor((total / 1000 / 60) % 60);
-  //   return {
-  //     total,minutes,seconds
-  //   }
-  // }
+  //loading intital value
+  useEffect(()=>{
 
-  // const startTimer = (e) => {
-  //       let { total, minutes, seconds } 
-  //                   = getTimeRemaining(e);
-  //       if (total >= 0) {
+    //reducing time after second and a minute
+    const secInterval=setInterval(()=>{
+      setSeconds(sec=>sec>0?sec-1:sec+59)
+    },1000);
+    const minInterval=setInterval(()=>{
+      setMinutes(min=>min-0.5)
+    },60000);
+    return ()=> clearInterval(secInterval,minInterval);
+  },[]);
   
-  //           // update the timer
-  //           // check if less than 10 then we need to 
-  //           // add '0' at the beginning of the variable
-  //           setTimer(
-  //               (hours > 9 ? hours : '0' + hours) + ':' +
-  //               (minutes > 9 ? minutes : '0' + minutes) + ':'
-  //               + (seconds > 9 ? seconds : '0' + seconds)
-  //           )
-  //       }
-  //   }
+  
   return (
     <div  >
     <Container >
@@ -92,7 +83,7 @@ function App() {
 
           <h4 className="mt-2">Clock</h4>
           <div className="d-flex align-items-center justify-content-center" style={{backgroundColor:"#737373",width:'170px',height:'170px',borderRadius:'50%',color:"#FAFAF9"}}>
-            <h3>{timer}</h3>
+            <h3>{minutes}:{seconds}</h3>
           </div>
           <div className="d-flex mx-4 my-2">
             
