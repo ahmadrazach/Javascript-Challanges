@@ -5,21 +5,74 @@ import {useState,useEffect} from "react";
 function App() {
 
   //state of our timer
-  const [minutes,setMinutes]=useState(25);
-  const [seconds,setSeconds]=useState(60);
+  const [workTime,setWorkTime]=useState(25);
+  const [breakTime,setBreakTime]=useState(5);
+  
 
+  //function for increment time
+  const incrementWorkTime=()=>{
+    setWorkTime(workTime=>workTime+1);
+  }
+
+  //function for decrement time
+  const decrementWorkTime=()=>{
+    if(workTime>1)
+    setWorkTime(workTime=>workTime-1);
+  }
+
+  // incrementBreak time
+  const incrementBreakTime=()=>{
+    
+    setBreakTime(breakTime=>breakTime+1);
+  }
+
+  //decrement Break time
+  const decrementBreakTime=()=>{
+    if(breakTime>1)
+    setBreakTime(breakTime=>breakTime-1);
+  }
+
+
+  // https://medium.com/@marjuhirsh/a-beginners-account-of-building-a-pomodoro-clock-in-react-2d03f856b28a
   //loading intital value
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    //reducing time after second and a minute
-    const secInterval=setInterval(()=>{
-      setSeconds(sec=>sec>0?sec-1:sec+59)
-    },1000);
-    const minInterval=setInterval(()=>{
-      setMinutes(min=>min-0.5)
-    },60000);
-    return ()=> clearInterval(secInterval,minInterval);
-  },[]);
+      
+  //     //reducing time after second and a minute
+  //   const secInterval=setInterval(()=>
+  //   {
+  //     setSeconds(sec=>sec>0 && minutes >0 ? sec-1 : sec+59);
+
+  //     // if(seconds<=0 && minutes<=0)
+  //     // {
+  //     //  clearInterval(secInterval);
+  //     // }
+      
+      
+      
+  //   },1000);
+      
+  //   //adding minutes
+  //   const minInterval=setInterval(()=>{
+      
+  //     setMinutes(min=>min-0.5);
+         
+  //     // if(minutes<=0)
+  //     // {
+  //     //  console.log('minutes vala ruk gya')
+  //     //   clearInterval(minInterval);
+  //     // }
+  //     // 60000
+  //   },1000);
+      
+  //   if(seconds<=0 && minutes<=0)
+  //   {
+  //     console.log('khtm')
+  //     //returning values
+  //      return ()=> clearInterval(secInterval,minInterval);
+  //   }
+     
+// },[]);
   
   
   return (
@@ -37,9 +90,9 @@ function App() {
           <i className="bi bi-lightning-charge" style={{fontSize:'4rem'}}></i>
           <div className="d-flex mx-4 my-2">
             
-            <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}}></i>
-            <p className="mx-4"><strong style={{fontSize:'1.5rem'}}> 5 </strong> m</p>
-            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}}></i>
+            <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}} onClick={decrementBreakTime}></i>
+            <p className="mx-4"><strong style={{fontSize:'1.5rem'}}>{breakTime}</strong> m</p>
+            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}} onClick={incrementBreakTime}></i>
           </div>
         </div>
 
@@ -50,9 +103,9 @@ function App() {
           <i class="bi bi-pc-display-horizontal" style={{fontSize:'4rem'}}></i>
           <div className="d-flex mx-4 my-2">
             
-            <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}}></i>
-            <p className="mx-4"><strong style={{fontSize:'1.5rem'}}> 25 </strong> m</p>
-            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}}></i>
+            <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={decrementWorkTime}></i>
+            <p className="mx-4"><strong style={{fontSize:'1.5rem'}}>{workTime} </strong> m</p>
+            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={incrementWorkTime}></i>
           </div>
         </div>
       </div>
@@ -83,7 +136,7 @@ function App() {
 
           <h4 className="mt-2">Clock</h4>
           <div className="d-flex align-items-center justify-content-center" style={{backgroundColor:"#737373",width:'170px',height:'170px',borderRadius:'50%',color:"#FAFAF9"}}>
-            <h3>{minutes}:{seconds}</h3>
+            <h3>{workTime}</h3>
           </div>
           <div className="d-flex mx-4 my-2">
             
