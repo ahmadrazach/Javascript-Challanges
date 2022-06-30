@@ -144,9 +144,9 @@ function App() {
           <i class="bi bi-pc-display-horizontal" style={{fontSize:'4rem'}}></i>
           <div className="d-flex mx-4 my-2">
             
-            <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={decrementWorkTime}></i>
+            <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={handleWorkDecrement}></i>
             <p className="mx-4"><strong style={{fontSize:'1.5rem'}}>{workTime} </strong> m</p>
-            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={incrementWorkTime}></i>
+            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={handleWorkDecrement}></i>
           </div>
         </div>
       </div>
@@ -177,7 +177,7 @@ function App() {
 
           <h4 className="mt-2">Clock</h4>
           <div className="d-flex align-items-center justify-content-center" style={{backgroundColor:"#737373",width:'170px',height:'170px',borderRadius:'50%',color:"#FAFAF9"}}>
-            <h3>{workTime}</h3>
+            <h3>{currentTime}</h3>
           </div>
           <div className="d-flex mx-4 my-2">
             
