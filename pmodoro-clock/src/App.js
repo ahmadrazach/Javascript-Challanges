@@ -4,11 +4,14 @@ import {useState,useEffect} from "react";
 
 function App() {
 
-  //state of our timer
+  //states of our timer
   const [workTime,setWorkTime]=useState(25);
   const [breakTime,setBreakTime]=useState(5);
+  const [cycle,setCycle]=useState('Session');
+  const [timerId,setTimerId]=useState(0);
+  const [timerRunning,setTimerRunning]=useState(false);
+  const [currentTime,setCurrentTime]=useState('25:00');
   
-
   //function for increment time
   const incrementWorkTime=()=>{
     setWorkTime(workTime=>workTime+1);
@@ -74,7 +77,45 @@ function App() {
      
 // },[]);
   
+  // timer function for the  countdown
+  // const timer=()=>{
+  //   if(timerRunning)
+  //   {
+  //     clearInterval(timerId);
+  //     setCurrentTime('25:00');
+  //     setTimerRunning();
+  //   }
+  //   else
+  //   {
+  //     cycle==="Session"?
+  //     startTimer(workTime);
+  //     startTimer(breakTime);
+  //   }
+  // }
+
+  //---- Work handling
   
+  //increment
+  const handleWorkIncrement=()=>{
+    
+    incrementWorkTime();
+
+    if(!timerRunning)
+      setCurrentTime(workTime);
+  }
+
+  // decrement
+  const handleWorkDecrement=()=>{
+
+    decrementWorkTime();
+
+    if(!timerRunning)
+    {
+      setCurrentTime(workTime);
+    }
+  }
+
+
   return (
     <div  >
     <Container >
@@ -140,7 +181,7 @@ function App() {
           </div>
           <div className="d-flex mx-4 my-2">
             
-            <i className="bi bi-play-circle mx-2 btn" style={{fontSize:'1.5rem'}}></i>
+            <i className="bi bi-play-circle mx-2 btn" style={{fontSize:'1.5rem'}} ></i>
             <i className="bi bi-pause-circle mx-2 btn" style={{fontSize:'1.5rem'}}></i>
             <i className="bi bi-arrow-clockwise mx-2 btn" style={{fontSize:'1.5rem'}}></i>
           </div>
