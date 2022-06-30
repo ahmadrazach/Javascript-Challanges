@@ -78,20 +78,20 @@ function App() {
 // },[]);
   
   // timer function for the  countdown
-  // const timer=()=>{
-  //   if(timerRunning)
-  //   {
-  //     clearInterval(timerId);
-  //     setCurrentTime('25:00');
-  //     setTimerRunning();
-  //   }
-  //   else
-  //   {
-  //     cycle==="Session"?
-  //     startTimer(workTime);
-  //     startTimer(breakTime);
-  //   }
-  // }
+  const timer=()=>{
+    if(timerRunning)
+    {
+      clearInterval(timerId);
+      setCurrentTime('25:00');
+      setTimerRunning();
+    }
+    else
+    {
+      cycle==="Session"?
+      startTimer(workTime):
+      startTimer(breakTime);
+    }
+  }
 
   //---- Work handling
   
@@ -115,7 +115,39 @@ function App() {
     }
   }
 
+//  starting timer function
 
+  const startTimer=(duration)=>{
+
+    setTimerRunning('true');
+    let time=duration*60;
+    let minutes,seconds;
+
+    let runningTimer=setInterval(()=>
+    {
+      setTimerId(runningTimer);
+      minutes=Math.floor(time/60);
+      seconds=time-minutes*60;
+      minutes=minutes<10 ? "0" + minutes : minutes;
+      seconds=seconds<10 ? "0" + seconds : seconds;
+      setCurrentTime(`${minutes}:${seconds}`);
+      if(time===0)
+      {
+        if(cycle==="Session")
+        {
+          setCycle("Break");
+          setTimerRunning(false);
+        }
+        clearInterval(timerId);
+        startTimer(breakTime);
+      }
+      else
+      {
+        setCycle("Session");
+        setTimerRunning(workTime);
+      }
+    },1000);
+  }
   return (
     <div  >
     <Container >
@@ -146,7 +178,7 @@ function App() {
             
             <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={handleWorkDecrement}></i>
             <p className="mx-4"><strong style={{fontSize:'1.5rem'}}>{workTime} </strong> m</p>
-            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={handleWorkDecrement}></i>
+            <i className="bi bi-plus-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={handleWorkIncrement}></i>
           </div>
         </div>
       </div>
@@ -181,7 +213,7 @@ function App() {
           </div>
           <div className="d-flex mx-4 my-2">
             
-            <i className="bi bi-play-circle mx-2 btn" style={{fontSize:'1.5rem'}} ></i>
+            <i className="bi bi-play-circle mx-2 btn" style={{fontSize:'1.5rem'}} onClick={startTimer} ></i>
             <i className="bi bi-pause-circle mx-2 btn" style={{fontSize:'1.5rem'}}></i>
             <i className="bi bi-arrow-clockwise mx-2 btn" style={{fontSize:'1.5rem'}}></i>
           </div>
