@@ -173,7 +173,7 @@ function App() {
         <div className="d-flex flex-column align-items-center m-2 m-md-0" style={{backgroundColor:'#E7E5E4',borderRadius:'25px'}}>
 
           <h4 className="mt-2">Session</h4>
-          <i class="bi bi-pc-display-horizontal" style={{fontSize:'4rem'}}></i>
+          <i className="bi bi-pc-display-horizontal" style={{fontSize:'4rem'}}></i>
           <div className="d-flex mx-4 my-2">
             
             <i className="bi bi-dash-circle mx-2 btn" style={{fontSize:'1.5rem'}}  onClick={handleWorkDecrement}></i>
@@ -196,9 +196,9 @@ function App() {
               <strong><i className="bi bi-plus-circle btn" style={{fontSize:"1rem",fontWeight:'10px',color:'white'}}></i></strong>
             </div>
             <div className="m-2">
-              <p style={{borderBottom:'1px dashed black'}}><i class="bi bi-check-circle"></i> 1st one</p>
-              <p style={{borderBottom:'1px dashed black'}}><i class="bi bi-check-circle"></i> 2nd one</p>
-              <p style={{borderBottom:'1px dashed black'}}><i class="bi bi-check-circle"></i> 3rd one</p>
+              <p style={{borderBottom:'1px dashed black'}}><i className="bi bi-check-circle"></i> 1st one</p>
+              <p style={{borderBottom:'1px dashed black'}}><i className="bi bi-check-circle"></i> 2nd one</p>
+              <p style={{borderBottom:'1px dashed black'}}><i className="bi bi-check-circle"></i> 3rd one</p>
               <p className="text-center">* focus on max 3 tasks *</p>
             </div>
           </div>
