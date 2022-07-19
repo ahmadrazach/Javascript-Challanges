@@ -20,6 +20,17 @@ const schema = buildASTSchema(gql`
     author: String
     body: String
   }
+
+  type Mutation {
+    submitPost(input: PostInput!): Post
+  }
+  
+  input PostInput {
+    id: ID
+    author: String!
+    body: String!
+  }
+
 `);
 
 const mapPost = (post, id) => post && ({ id, ...post });
@@ -27,6 +38,21 @@ const mapPost = (post, id) => post && ({ id, ...post });
 const root = {
   posts: () => POSTS.map(mapPost), // to get array of Posts
   post: ({ id }) => mapPost(POSTS[id], id), // to get a post by passing in id
+  submitPost: ({ input: { id, author, body } }) => {
+    const post = { author, body };
+    let index = POSTS.length;
+  
+    if (id != null && id >= 0 && id < POSTS.length) {
+      if (POSTS[id].authorId !== author) return null;
+  
+      POSTS.splice(id, 1, post);
+      index = id;
+    } else {
+      POSTS.push(post);
+    }
+  
+    return mapPost(post, index);
+  },
 };
 
 const app = express();
