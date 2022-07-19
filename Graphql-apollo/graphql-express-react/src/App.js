@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import { Button, Container } from 'reactstrap';
+import React, { Component } from 'react'
+import { Button, Container } from 'reactstrap'
 
-import PostViewer from './PostViewer';
-import PostEditor from './PostEditor';
+import PostViewer from './PostViewer'
+import PostEditor from './PostEditor'
 
 class App extends Component {
   state = {
     editing: null,
-  };
+  }
 
   render() {
-
-    const { editing } = this.state;
+    const { editing } = this.state
 
     return (
-  <Container fluid>
+      <Container fluid>
         <Button
-          className="my-2"
-          color="primary"
+          className='my-2'
+          color='primary'
           onClick={() => this.setState({ editing: {} })}
         >
           New Post
@@ -33,8 +32,8 @@ class App extends Component {
           />
         )}
       </Container>
-    );
+    )
   }
 }
 
-export default App;
+export default App

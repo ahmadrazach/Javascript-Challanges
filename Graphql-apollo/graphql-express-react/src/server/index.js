@@ -15,6 +15,9 @@ const schema = buildASTSchema(gql`
     post(id: ID!): Post
   }
 
+  type Response{
+    Success:Boolean
+  }
   type Post {
     id: ID
     author: String
@@ -23,6 +26,7 @@ const schema = buildASTSchema(gql`
 
   type Mutation {
     submitPost(input: PostInput!): Post
+    deletePost(id: ID!):Response
   }
   
   input PostInput {
@@ -31,6 +35,7 @@ const schema = buildASTSchema(gql`
     body: String!
   }
 
+ 
 `);
 
 const mapPost = (post, id) => post && ({ id, ...post });
@@ -53,6 +58,10 @@ const root = {
   
     return mapPost(post, index);
   },
+  deletePost:({id})=>{
+    POSTS.splice(id,1);
+     console.log("delte post",POSTS);
+  }
 };
 
 const app = express();

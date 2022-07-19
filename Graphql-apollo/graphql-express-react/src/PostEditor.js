@@ -1,5 +1,5 @@
-import React from 'react';
-import gql from 'graphql-tag';
+import React from 'react'
+import gql from 'graphql-tag'
 import {
   Button,
   Form,
@@ -9,11 +9,11 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from 'reactstrap';
-import { Form as FinalForm, Field } from 'react-final-form';
+} from 'reactstrap'
+import { Form as FinalForm, Field } from 'react-final-form'
 
-import client from './apollo';
-import { GET_POSTS } from './PostViewer';
+import client from './apollo'
+import { GET_POSTS } from './PostViewer'
 
 const SUBMIT_POST = gql`
   mutation SubmitPost($input: PostInput!) {
@@ -21,21 +21,21 @@ const SUBMIT_POST = gql`
       id
     }
   }
-`;
+`
 
 const PostEditor = ({ post, onClose }) => (
   <FinalForm
-  // In the onSubmit function, you’ll call the mutation needed to submit the post
+    // In the onSubmit function, you’ll call the mutation needed to submit the post
     onSubmit={async ({ id, author, body }) => {
-      const input = { id, author, body };
+      const input = { id, author, body }
 
       await client.mutate({
         variables: { input },
         mutation: SUBMIT_POST,
         refetchQueries: () => [{ query: GET_POSTS }],
-      });
+      })
 
-      onClose();
+      onClose()
     }}
     initialValues={post}
     render={({ handleSubmit, pristine, invalid }) => (
@@ -49,29 +49,33 @@ const PostEditor = ({ post, onClose }) => (
               <Label>Author</Label>
               <Field
                 required
-                name="author"
-                className="form-control"
-                component="input"
+                name='author'
+                className='form-control'
+                component='input'
               />
             </FormGroup>
             <FormGroup>
               <Label>Body</Label>
               <Field
                 required
-                name="body"
-                className="form-control"
-                component="input"
+                name='body'
+                className='form-control'
+                component='input'
               />
             </FormGroup>
           </ModalBody>
           <ModalFooter>
-            <Button type="submit" disabled={pristine} color="primary">Save</Button>
-            <Button color="secondary" onClick={onClose}>Cancel</Button>
+            <Button type='submit' disabled={pristine} color='primary'>
+              Save
+            </Button>
+            <Button color='secondary' onClick={onClose}>
+              Cancel
+            </Button>
           </ModalFooter>
         </Form>
       </Modal>
     )}
   />
-);
+)
 
-export default PostEditor;
+export default PostEditor
