@@ -5,8 +5,8 @@ const gql = require('graphql-tag');
 const { buildASTSchema } = require('graphql');
 
 const POSTS = [
-  { author: "John Doe", body: "Hello world" },
-  { author: "Jane Doe", body: "Hi, planet!" },
+  { author: "Ahmed Raza", body: "Hello world" },
+  { author: "Ali Tariq", body: "Hi, planet!" },
 ];
 
 const schema = buildASTSchema(gql`
@@ -43,7 +43,7 @@ const root = {
     let index = POSTS.length;
   
     if (id != null && id >= 0 && id < POSTS.length) {
-      if (POSTS[id].authorId !== author) return null;
+      
   
       POSTS.splice(id, 1, post);
       index = id;
