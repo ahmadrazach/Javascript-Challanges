@@ -1,6 +1,10 @@
 # CRUD using Express, React and GraphQL
 
-Packages:
+## Features:
+
+- performing CRUD operation using Express , React and GraphQL
+
+## Packages:
 
 - Express
 - CORS
