@@ -3,6 +3,7 @@ import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { Table } from 'reactstrap'
 import client from './apollo'
+
 export const GET_POSTS = gql`
   query GetPosts {
     posts {
@@ -30,6 +31,40 @@ const deleteUser = async (e, id) => {
 }
 const rowStyles = (post, canEdit) =>
   canEdit(post) ? { cursor: 'pointer', fontWeight: 'bold' } : {}
+
+// const PostViewer = ({ canEdit, onEdit }) => (
+//   <Query query={GET_POSTS}>
+//     {({ loading, data }) =>
+//       !loading && (
+//         <Table>
+//           <thead>
+//             <tr>
+//               <th>Author</th>
+//               <th>Body</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {data.posts.map((post, index) => (
+//               <tr key={post.id} style={rowStyles(post, canEdit)}>
+//                 <td>{post.author}</td>
+//                 <td>{post.body}</td>
+//                 <td>
+//                   <button onClick={() => canEdit(post) && onEdit(post)}>
+//                     Edit
+//                   </button>
+//                 </td>
+//                 <td>
+//                   <button onClick={(e) => deleteUser(e, index)}>☓</button>
+//                 </td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </Table>
+//       )
+//     }
+//   </Query>
+// )
+
 
 const PostViewer = ({ canEdit, onEdit }) => (
   <Query query={GET_POSTS}>
@@ -70,3 +105,4 @@ PostViewer.defaultProps = {
 }
 
 export default PostViewer
+
