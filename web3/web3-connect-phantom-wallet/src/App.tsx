@@ -33,6 +33,7 @@ interface PhantomProvider {
   request: (method: PhantomRequestMethod, params: any) => Promise<unknown>
 }
 function App() {
+  
   // var to store a function that gets a wallet provider
   const getProvider = (): PhantomProvider | undefined => {
     if ('solana' in window) {
