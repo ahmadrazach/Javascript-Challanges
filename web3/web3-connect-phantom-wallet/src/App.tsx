@@ -33,7 +33,6 @@ interface PhantomProvider {
   request: (method: PhantomRequestMethod, params: any) => Promise<unknown>
 }
 function App() {
-  
   // var to store a function that gets a wallet provider
   const getProvider = (): PhantomProvider | undefined => {
     if ('solana' in window) {
@@ -99,8 +98,14 @@ function App() {
           provider ? (
             walletKey ? (
               <>
-              Connected account {walletKey}
-              <button style={{marginTop:'10px'}} onClick={disconnectWallet}> Disconnect </button>
+                Connected account {walletKey}
+                <button
+                  style={{ marginTop: '10px' }}
+                  onClick={disconnectWallet}
+                >
+                  {' '}
+                  Disconnect{' '}
+                </button>
               </>
             ) : (
               <button onClick={connectWallet}>Connect to Phantom Wallet</button>
