@@ -3,7 +3,15 @@
 ## Features:
 
 - Authentication with web3
-- usage of Phantom for signin/signup
+- Detect Phantom Provider Exists
+- Connect to Phantom Wallet
+- Display Account and Hide "Connect to Wallet" button
+- Disonnecting from the Phantom Wallet
+
+## TechStack
+
+- React with Typescript
+- Phantom
 
 ## Dependencies:
 
