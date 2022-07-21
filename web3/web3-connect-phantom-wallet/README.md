@@ -1,5 +1,7 @@
 # Connecting React App with phantom wallet
 
+<img src="demo.gif" alt="Demo"/>
+
 ## Features:
 
 - Authentication with web3
