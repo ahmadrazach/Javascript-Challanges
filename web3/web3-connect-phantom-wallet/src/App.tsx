@@ -47,6 +47,32 @@ function App() {
   // vars to store and update provider's state
   const [provider,setProvider]=useState<PhantomProvider | undefined>(undefined);
   
+  //generating a wallet key
+  const [walletKey, setWalletKey] = useState<PhantomProvider | undefined>( undefined );
+  
+  // prompting user to connect wallet if it exists
+  const connectWallet=async()=>{
+    
+    // using to ignore the line below it
+    // @ts-ignore
+    const { solana }=window;
+
+    if(solana){
+
+      try{
+
+        const response=await solana.connect();
+        console.log('wallet account', response.publicKey.toString());
+        setWalletKey(response.publicKey.toString());
+      }
+      catch(err){
+        //
+        console.log("User rejected the request");
+      }
+    }
+
+  }
+
   //detecting if phantom provider exists
   useEffect(()=>{
     const provider=getProvider();
@@ -61,7 +87,7 @@ function App() {
         <h2>Connect to Phantom Wallet</h2>
         {
           provider && (
-            <button>Connect to Phantom Wallet</button>
+            <button onClick={connectWallet}>Connect to Phantom Wallet</button>
           )
         }
         {
