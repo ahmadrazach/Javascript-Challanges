@@ -85,13 +85,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>Connect to Phantom Wallet</h2>
-        {
-          provider && (
-            <button onClick={connectWallet}>Connect to Phantom Wallet</button>
-          )
-        }
-        {
-          !provider && <p>No provider found. Install <a href="https://phantom.app/">Phantom Browser extension</a></p>
+        { //if extenion's there but wallet key's not
+          provider ?
+          walletKey ?
+          <>Connected account {walletKey}</>
+          :
+          <button onClick={connectWallet}>Connect to Phantom Wallet</button>
+          :
+          <p>No provider found. Install <a href="https://phantom.app/">Phantom Browser extension</a></p>
         }
       </header>
     </div>
