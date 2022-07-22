@@ -1,14 +1,14 @@
-# Template for HTML CSS and Javascript application
+# MetaData Finder
 
 <a href="">Live Demo</a>
 
 <img src="" alt="Demo image"/>
 
 ## Basic Features:
-
+ 
 - finding metadata
--
--
+- 
+- 
 -
 
 ## Technologies used:
