@@ -1,16 +1,19 @@
 const express = require('express')
 const { exec } = require('child_process')
+const dotenv = require('dotenv')
+
+dotenv.config()
+
+const port = process.env.PORT
 // express initialization
 const app = express()
-
-const port = 8000
 
 app.listen(port, () => {
   console.log(`Running on port ${port}`)
 })
 
+// api for the checking node version
 app.get('/check', (req, res) => {
-  //   res.send('Hello World')
   exec('node --version', (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`)
