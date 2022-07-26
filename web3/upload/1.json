@@ -1,9 +1,9 @@
 {
   "name": "Number #0002",
   "symbol": "NB",
-  "description": "Collection of 10 numbers on the blockchain. This is the number changed/10.",
+  "description": "Collection of 10 numbers on the blockchain. This is the number check4/10.",
   "seller_fee_basis_points": 500,
-  "image": "https://raw.githubusercontent.com/ahmadrazach/Javascript-Challanges/main/web3/upload/1.png",
+  "image": "https://raw.githubusercontent.com/ahmadrazach/Javascript-Challanges/main/web3/upload/check.png",
   "attributes": [
   ],
   "properties": {
