@@ -5,15 +5,11 @@
   "seller_fee_basis_points": 500,
   "image": "https://raw.githubusercontent.com/ahmadrazach/Javascript-Challanges/main/web3/upload/1.png",
   "attributes": [
-    { "trait_type": "Layer-1", "value": "0" },
-    { "trait_type": "Layer-2", "value": "0" },
-    { "trait_type": "Layer-3", "value": "0" },
-    { "trait_type": "Layer-4", "value": "2" }
   ],
   "properties": {
     "creators": [
       {
-        "address": "Ahmedup5aGmZ2cPVu4wX6qmrHPNLGYmCkFheFZNK7RrQ",
+        "address": "FL1M4up5aGmZ2cPVu4wX6qmrHPNLGYmCkFheFZNK7RrQ",
         "share": 100
       }
     ],
