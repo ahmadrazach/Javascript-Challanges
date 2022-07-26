@@ -3,7 +3,7 @@
   "symbol": "NB",
   "description": "Collection of 10 numbers on the blockchain. This is the number 2/10.",
   "seller_fee_basis_points": 500,
-  "image": "1.png",
+  "image": "https://raw.githubusercontent.com/ahmadrazach/Javascript-Challanges/main/web3/upload/1.png",
   "attributes": [
     { "trait_type": "Layer-1", "value": "0" },
     { "trait_type": "Layer-2", "value": "0" },
