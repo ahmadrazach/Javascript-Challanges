@@ -1,0 +1,13 @@
+/node_modules/
+/build/
+/dist/
+/docs/
+/lib/
+.idea/*
+**/.cache
+
+.DS_Store
+coverage
+*.log
+# *current-metadata-cache.json
+# *current-metadata-cache
