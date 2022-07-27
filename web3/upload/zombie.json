@@ -3,7 +3,7 @@
   "symbol": "ZB",
   "description": "Collection of 10 zombies on the blockchain. This is the number 2/10.",
   "seller_fee_basis_points": 500,
-  "image": "https://raw.githubusercontent.com/ahmadrazach/Javascript-Challanges/main/web3/upload/1.png",
+  "image": "https://raw.githubusercontent.com/ahmadrazach/Javascript-Challanges/main/web3/upload/zombie.png",
   "attributes": [
   ],
   "properties": {
